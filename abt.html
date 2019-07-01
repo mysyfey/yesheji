@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='css/slick.css' />
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <script src="js/scrolloverflow.min.js"></script>
+    <script src="js/jquery.fullpage.extensions.min.js"></script>
+    <!--script src="js/fullpage.scrollOverflowReset.min.js"></script-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/apple-style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <style type="text/css">
+    body {
+        letter-spacing: 1px;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    a，a:focus,
+    a:hover {
+        text-decoration: none;
+        color: auto;
+        cursor: pointer
+    }
+
+
+    svg {
+        fill: currentColor;
+    }
+
+    .d-nav {
+        //position: fixed;
+        z-index: 3;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .d-join {
+        position: absolute;
+        right: 10px;
+        font-size: 14px;
+        top: 15px;
+        color: white;
+    }
+
+    .d-join p {
+        text-align: center;
+    }
+
+    .d-toggle {
+        position: relative;
+        display: block;
+        z-index: 999;
+        padding: 10px;
+        left: 10px;
+        top: 5px;
+        width: 150px;
+    }
+
+    .d-circle {
+
+        position: relative;
+        width: 44px;
+        height: 44px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+        transition: -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+    }
+
+    .d-circle::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 46px;
+        height: 46px;
+        border: 4px solid #b4b4b4;
+        box-sizing: border-box;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+        transition: opacity .6s cubic-bezier(.645, .045, .355, 1), -webkit-transform .6s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .6s cubic-bezier(.645, .045, .355, 1), opacity .6s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .6s cubic-bezier(.645, .045, .355, 1), opacity .6s cubic-bezier(.645, .045, .355, 1), -webkit-transform .6s cubic-bezier(.645, .045, .355, 1);
+    }
+
+    .d-toggle:hover .d-circle::before {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        transition: opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), opacity .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+    }
+    /*.d-circle::after {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        transition: -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1), -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        content: "";
+        width: 48px;
+        height: 48px;
+        background-color: #dc0032;
+        border-radius: 50%;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }*/
+
+    .icon-hamburger {
+        width: 14px;
+        height: 20px;
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate(0) scaleX(1);
+        transform: translate3d(-50%, -50%, 0) rotate(0) scaleX(1);
+        transition: -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1), -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        color: #dc0032;
+        line-height: 0;
+    }
+
+    .two-hundreds-text {
+        color: #dc0032;
+        font-weight: 800;
+        letter-spacing: 4px;
+    }
+
+    .d-idream {
+        position: absolute;
+        left: 69px;
+        top: 35%;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        white-space: nowrap;
+    }
+
+    .colorful .d-idream {
+        color: black;
+    }
+
+    .nav_show .d-idream {
+        color: black;
+    }
+
+    .btn-plus {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        z-index: 9;
+        height: 34px;
+        width: 39px;
+    }
+
+    .btn-plus-inner {
+        position: absolute;
+        background-color: white;
+    }
+
+    .colorful .btn-plus-inner {
+        background-color: #dc0032;
+    }
+
+
+    .btn-plus-inner1 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 24px;
+    }
+
+    .btn-plus-inner2 {
+        height: 24px;
+        width: 2px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #fp-nav {
+        margin-top: 0;
+        top: auto;
+        bottom: 10%;
+    }
+
+    #fp-nav ul li a span {
+        background-color: #cbcbcb;
+        width: 6px;
+        height: 6px;
+        margin: -3px 0 0 -3px;
+    }
+
+    #fp-nav ul li a.active span,
+    #fp-nav ul li:hover a.active span {
+        background-color: #dc0032;
+        width: 6px;
+        height: 6px;
+        margin: -3px 0 0 -3px;
+    }
+
+    .bg-video-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+
+
+    .ButtonBox {
+        display: inline-block;
+        position: relative;
+        background-color: #dc0032;
+        padding: 12px 50px 12px 15px;
+        overflow: hidden;
+        color: #fff;
+        transition: background-color 0s cubic-bezier(.52, .08, .18, 1) 0s;
+    }
+
+    .ButtonBox-text {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), -webkit-transform .55s cubic-bezier(.52, .08, .18, 1);
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), transform .55s cubic-bezier(.52, .08, .18, 1);
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), transform .55s cubic-bezier(.52, .08, .18, 1), -webkit-transform .55s cubic-bezier(.52, .08, .18, 1);
+    }
+
+    .ButtonBox:hover .ButtonBox-icon {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+
+    .ButtonBox-icon {
+        display: block;
+        position: absolute;
+        width: 16px;
+        height: 14px;
+        right: 18px;
+        top: 50%;
+        margin-top: -7px;
+        line-height: 0;
+        z-index: 1;
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), -webkit-transform .55s cubic-bezier(.52, .08, .18, 1);
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), transform .55s cubic-bezier(.52, .08, .18, 1);
+        transition: color .55s cubic-bezier(.52, .08, .18, 1), transform .55s cubic-bezier(.52, .08, .18, 1), -webkit-transform .55s cubic-bezier(.52, .08, .18, 1);
+    }
+
+    .ButtonBox-icon svg {
+        width: 16px;
+        height: 14px;
+        vertical-align: bottom;
+    }
+
+
+
+
+
+
+
+    #container {
+        margin-top: -64px;
+    }
+
+    .about-title {
+        color: white;
+        background-color: #ff4d4c;
+    }
+
+    .container-wrapper {
+        padding: 0 45px;
+    }
+
+    .first-title .container-wrapper {
+        padding-top: 50px;
+    }
+
+    .content-wrapper {
+        margin: 0 auto;
+        max-width: 1080px;
+        padding-bottom: 75px;
+        padding-top: 75px;
+    }
+
+    .typography-card-subhead .small-medium {
+        margin-bottom: 13px;
+    }
+
+    .about-title .ButtonBox {
+        margin-top: 30px;
+    }
+
+
+    @media only screen and (max-width: 1068px) {
+
+        #fp-nav {
+            z-index: 2;
+        }
+
+        .section-content {
+            width: 87.5%;
+        }
+
+        .btn-plus {
+            z-index: 999;
+        }
+
+        .nav_shade[bar-showing="true"] {
+            opacity: 0;
+        }
+
+        .header_nav {
+            width: 100vw;
+            text-align: center;
+            background-image: url(images/white-bg.jpg);
+        }
+
+        .nav_section {
+            width: 100vw;
+        }
+
+        .nav_show .btn-plus-inner {
+            background-color: #dc0032;
+        }
+
+        .social-media {
+            //bottom: 50pqx;
+            margin-left: 0;
+        }
+
+
+        .sm-text:after {
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .copyright span {
+            display: inline;
+        }
+    }
+
+    @media only screen and (max-width: 735px) {
+
+
+        .glyphicon-play-circle {
+            font-size: 1em;
+        }
+
+        .small-medium {
+            font-size: 16px;
+        }
+
+        .ButtonPlay-circle {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .ButtonPlay-circle::before {
+            left: -1px;
+            top: -1px;
+            width: 62px;
+            height: 62px;
+            border: 4px solid #fff;
+        }
+
+
+        .ButtonPlay-circle-icon {
+            width: 17.5px;
+            height: 22.5px;
+            left: 23px;
+            top: 19px;
+        }
+
+        .ButtonPlay-circle-icon svg {
+            width: 17.5px;
+            height: 22.5px;
+        }
+    }
+
+    .one-two-images img {
+        height: 230px;
+        width: 100%;
+    }
+
+    .article-intro .typography-eyebrow {
+        margin-top: 2em;
+    }
+
+    .article-intro p {
+        margin-top: 20px;
+    }
+
+
+    .team_header {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.28;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        color: #3c3c3c;
+    }
+
+    #team_container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        overflow: hidden;
+    }
+
+    .team_item {
+        width: 41%;
+        margin-top: 30px;
+    }
+
+    .team_item_name {
+        color: #000;
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 10px 0 0;
+        padding: 0;
+    }
+
+    .team_item_class {
+        color: #637282;
+        font-size: 13px;
+        line-height: 1.54;
+        margin: 8px 0 0;
+        padding: 0;
+    }
+
+    .team_p {
+        font-weight: 400;
+    }
+
+    .team_item_avatar {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="d-nav">
+        <a class="d-toggle">
+            <div class="d-circle">
+                <div class="icon-hamburger">
+                    <svg viewBox="0 0 14 20" width="100%" height="100%">
+                        <path d="M6.7 0L5.4 4h7l1.3-4zM4.1 8l-1.3 4h7l1.3-4zM1.6 16L.3 20h7l1.3-4z"></path>
+                    </svg>
+                </div>
+                <!--div class="icon-hamburger icon-close">
+                    <svg viewBox="0 0 14 14" width="100%" height="100%">
+                        <path d="M13.5.5h-2.3L7 5.6 2.8.5H.5L5.9 7 .5 13.5h2.3L7 8.4l4.2 5.1h2.3L8.1 7z"></path>
+                    </svg>
+                </div-->
+            </div>
+            <span class="d-idream">爱梦想</span>
+        </a>
+        <!--div class="d-join">
+            <p class="red-text">200</p>
+            <p style="font-weight:600">我要加入</p>
+        </div-->
+        <a class="btn-plus">
+            <div class="btn-plus-inner btn-plus-inner1">&nbsp</div>
+            <div class="btn-plus-inner btn-plus-inner2">&nbsp</div>
+        </a>
+    </header>
+    <div id="container">
+        <div class="about-title first-title">
+            <div class="container-wrapper">
+                <div class="content-wrapper">
+                    <h1 class="typography-card-subhead">
+                        <p class="small-medium">我们的故事</p>
+                        当我的两个创业小伙伴还只有十三、十四岁时，我们高喊着“挑战QQ”的口号走上了学习开发聊天软件的道路。
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="one-two-images">
+            <div>
+                <img src="images/twitter1.jpg">
+            </div>
+        </div>
+        <div class="article-intro">
+            <div class="container-wrapper">
+                <div class="content-wrapper small-medium">
+                    <h2 class="typography-headline">梦想三部曲</h2>
+                    <h4 class="typography-eyebrow">改变教育的梦想</h4>
+                    <p>
+                        1999年是中国互联网发展中非常重要的一年。这一年QQ诞生，这一年阿里巴巴诞生，而这一年，对于我而言，则是梦想诞生。
+                    </p>
+                    <p>“我要改变教育，让女儿在快乐中度过美好童年！”</p>
+                    <p>这是四岁的小王菲第一次从幼儿园带回升小学的模拟考卷，我发自心底的呼喊。</p>
+                    <p>尽管那时，在遥远的深圳，我的同龄人马化腾先生才刚刚痴迷于一款被称之为“icq”的聊天软件，尽管在杭州湖畔公园那所知名的公寓，马云大哥也才把人生目标锁定在即将爆发的互联网舞台，尽管国内外那些在后来对我们的发展产生了重要影响的梦想家们，在二十多年前还处在不为人知的草莽时期，但是在同一时期，凭着直觉和自信，凭着对自己从小学到大学所受教育的亲身体验和感悟，在茫茫的荒野，我启动了人生的探索模式。</p>
+                </div>
+            </div>
+        </div>
+        <div class="one-two-images">
+            <div>
+                <img src="images/twitter2.jpg">
+            </div>
+        </div>
+        <div id="our_team">
+            <div class="container-wrapper">
+                <h2 class="team_header" style="margin-top: 75px;">
+        创始团队
+    </h2>
+                <div id="team_container">
+                    <h2 class="team_header" style="width: 100%;">
+            创始人
+        </h2>
+                    <div class="team_item">
+                        <div>
+                            <img class="team_item_avatar" src="images/whx.jpg">
+                        </div>
+                        <div class="">
+                            <p class="team_p team_item_name">王好秀</p>
+                            <p class="team_p team_item_class">CEO</p>
+                        </div>
+                    </div>
+                    <h2 class="team_header" style="width: 100%;">
+            联合创始人
+        </h2>
+                    <div class="team_item">
+                        <div>
+                            <img class="team_item_avatar" src="images/lxf.jpg">
+                        </div>
+                        <div class="">
+                            <p class="team_p team_item_name">梁秀芬</p>
+                            <p class="team_p team_item_class">CEO</p>
+                        </div>
+                    </div>
+                    <div class="team_item">
+                        <div>
+                            <img class="team_item_avatar" src="images/wf.jpg">
+                        </div>
+                        <div class="">
+                            <p class="team_p team_item_name">王菲</p>
+                            <p class="team_p team_item_class">CEO</p>
+                        </div>
+                    </div>
+                    <div class="team_item">
+                        <div>
+                            <img class="team_item_avatar" src="images/wh.jpg">
+                        </div>
+                        <div class="">
+                            <p class="team_p team_item_name">王昊</p>
+                            <p class="team_p team_item_class">CEO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-title">
+            <div class="container-wrapper">
+                <div class="content-wrapper">
+                    <h1 class="typography-card-subhead">
+                        当我的两个创业小伙伴还只有十三、十四岁时，我们高喊着“挑战QQ”的口号走上了学习开发聊天软件的道路。
+                    </h1>
+                    <a class="ButtonBox" style="background-color:white;color:black;">
+                        <span class="ButtonBox-text">Yes, we did it!</span>
+                        <span class="ButtonBox-icon">
+                            <svg>
+                                <path d="M9.8.5H8.2l5.6 5.9H.1v1.2h13.7l-5.6 5.9h1.6L15.9 7z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    //window.onload=function(){
+    $(function() {
+
+    });
+    </script>
+</body>
+
+</html>

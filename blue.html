@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel='stylesheet' type='text/css' href='/css/slick.css' />
+    <link rel='stylesheet' type='text/css' href='/css/slick-theme.css' />
+    <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css' />
+    <!--link rel='stylesheet' type='text/css' href='css/canvas.bootstrap.min.css' /-->
+    <link rel="stylesheet" href="/css/offcanvas.css" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/apple-style.css" type="text/css" />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <link rel="stylesheet" href="/css/30style.css" type="text/css" />
+    <script src="/js/jquery.min.js"></script>
+    <!--script type='text/javascript' src='js/bootstrap.min.js'></script-->
+    <script type='text/javascript' src='/js/offcanvas.js'></script>
+    <script type='text/javascript' src='/js/slick.min.js'></script>
+    <script type='text/javascript' src='/js/scrollAnimate.js'></script>
+    <script type='text/javascript' src='/js/utilities.js'></script>
+    <style type="text/css">
+
+    .active {
+        overflow: hidden;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .main-section {
+        position: relative;
+        height: 650px;//800px;
+        color: #fff;
+    }
+
+    h3{
+        //font-weight: bold;
+    }
+
+    .the-container {
+        position: relative;
+        //margin-top: 75px;
+        width: 100%;
+        //max-width: 1440px;
+    }
+
+    .invitation .shade {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .main-img {
+        background-image: url('/images/hiker.jpg');
+    }
+
+    .main-intro {
+        width: 100%;
+        bottom: 20%;
+        position: absolute;        
+    }
+
+    .text-container {
+        width: 723px;
+        
+    }
+
+    .company-cases {
+        letter-spacing: 1.5px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-size: 16px;
+        width: 100%;
+        //position: absolute;
+        //height: 100%;
+    }
+
+    .nav-div {
+        height: 75px;
+        background-color: rgb(47, 188, 92);
+        width: 100%;
+        position: absolute;
+
+        display: none;
+    }
+
+    .typography-headline-large {
+        line-height: 1.3;
+    }
+
+    /*.article-section {      
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }*/
+
+    .text-container p {
+        margin-bottom: 20px;
+    }
+
+    .text-container .typography-hero-headline {
+        margin: 40px 0;
+    }
+
+    .foreword-text {
+        margin-bottom: 60px;
+    }
+
+    .ask-text {        
+        font-size: 18px;
+        font-weight: bold;
+        margin: 40px 0;
+    }
+
+
+    .indent-content {
+        margin: 0 6%;       
+    }
+
+    .content-contianer {
+        border-bottom: 1px solid #e5e5e5;        
+        width: 100%;
+        color: #757575;
+        padding: 8% 0;
+    }
+
+    .yellow-text {
+        color:#ffd900;
+    }
+
+    .black-text {
+        color: black;
+    }
+
+    .grey-text {
+        color: #757575;
+    }
+
+    .red-text {
+        color: #ff1643;
+    }
+
+    .orange-text {
+        color: #fd6400;
+    }
+
+    .green-text {
+        color: rgb(47, 188, 92);
+    }
+
+    .indigo-text {
+        color:#05b4dd;
+    }
+
+    .blue-text {
+        color: rgb(47, 96, 250);
+    }
+
+    .one-two-images .cover-img {
+        height: 300px;
+        width: 100%;
+    }
+
+
+
+    .grey-bg {
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        right: -170px;
+        position: absolute;
+        background: url('/images/grey-stripe.svg') repeat-y 100% 0;
+    }
+
+
+    .invitation {
+        position: relative;
+        height: 444px;
+        background-image: url('images/picstack.jpg');
+        color: white;
+        font-weight: bold;
+        border-bottom: 5px dashed #fff;
+    }
+
+    .invitation .flex-center {
+        height: 100%;
+    }
+
+    .invitation .center-content {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+
+    .ButtonBox-text {
+        font-weight: bold;
+        //font-size: 18px;
+    }
+
+
+
+    .main-section .typography-headline {
+        line-height: 1.4;
+        //margin-top: 15px;
+    }
+
+    .red-shade {
+        background-color: #dc0032e8;
+    }
+
+    .one-two-images {
+        color: white;
+        text-align: center;
+    }
+
+    .play-circle {
+        height: 70px;
+        width: 70px;
+    }
+
+    .content-60 .typography-eyebrow {
+        margin-bottom: 20px;
+    }
+
+    .content-60 {
+        width: 60%;
+    }
+
+    .hard-hollow-button {
+        font-size: 16px;
+        font-weight: bold;
+        border: 2px solid;
+    }
+    .hard-hollow-button,
+    .ButtonBox {
+        padding: 13px 18px;
+    }
+
+
+    .arrow-button {
+        padding:15px 50px 16px 20px; 
+    }
+
+    .hollow-container {
+        margin-top: 40px;
+    }
+
+    .ten-years {
+        position: relative;
+        background-position: top center;
+        background-image: url('/images/green.jpg');
+        color: white;
+        height: 600px;
+    }
+
+    .right-intro {
+            top: 20%;
+            position: absolute;
+            right: 20%;
+            width: 40%;
+            max-width: 450px;
+    }
+
+   .destiny-mission {
+        background-image:url('/images/crowds.jpg');
+    }
+
+    .ywfh {
+        background-image:url('/images/nasdq.jpg');
+    }
+
+    .work-anywhere {
+        background-image:url('/images/people.jpg');
+        height: 400px;
+        position: relative;
+        text-align: center;
+    }
+
+    .white-shade {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .neutral-dark-grey {
+        color:#657786;
+    }
+
+    .bright-red-text{
+        color: #dc0032;
+    }
+
+    /*.carousel {
+        height: 30px;
+        position: relative;
+    }*/
+
+
+    @media only screen and (min-width: 1442px) {
+        .main-section{
+            //height: 950px;
+        }
+
+        .text-container {
+            width: 900px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        .left-leaning {
+            padding-right: -8%;
+            width: 100%;
+        }
+
+        .selected-nav::before {
+        background: #fbbc05;
+        border-radius: 50%;
+        content: '';
+        display: inline-block;
+        height: 8px;
+        position: absolute;
+        left: -2px;
+        top: 16px;
+        transition: opacity 200ms ease-in-out;
+        width: 8px;
+        }
+
+    }
+
+    @media (max-width: 853px) {
+
+        .text-container {
+            width: 100%;
+            padding: 0 65px;
+        }
+
+        .left-leaning {
+            padding-right: -8%;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+
+
+        .content-60 {
+            width: 80%;
+        }
+
+        .right-intro {
+            bottom: 30px;
+            top: auto;
+            position: absolute;
+            left: 10%;
+            right: 8%;
+            width: 70%;
+        }
+
+        .ten-years {
+            height: 400px;
+        }
+
+        .play-circle {
+            height: 60px;
+            width: 60px;
+        }
+
+        .invitation .center-content {
+            margin-top: 10%;
+        }
+
+        .one-two-images .cover-img {
+            height: 230px;
+        }
+
+        .content-contianer {
+            padding: 90px 0;
+        }
+
+        .text-container {
+            padding: 0 40px;
+        }
+
+        .main-img {
+            background-image: url('/images/hiker.jpg');
+        }
+
+        .main-section {
+            height: 700px;
+        }
+
+        .main-intro {
+            bottom: 15%;
+        }
+
+        .mynavbar .nav-container>.navbar-collapse {
+            width: 220px;
+            right: -220px;
+        }
+
+        .navbar-nav {
+            padding: 50px 20px 0 20px;
+        }
+
+        .navbar-nav li>a, .foot-nav a {
+            color: #222;
+            font-size: 15px;
+            border-bottom: 1px solid #ddd;
+            padding: 23px 5px;
+        }
+
+        .overlay.active {
+            background-color: #00000059;
+        }
+
+        .mynavbar .nav-container>.navbar-collapse {
+            background-color: rgba(255,255,255,0.98);
+            border-left: 1px solid #f2f2f2;
+        }
+
+        .navbar-toggle:not(.collapsed) .icon-bar {
+            background-color: #222;
+        }
+
+
+        .typography-title-large {
+            font-size: 24px;
+        }
+    }
+
+    .ink-blue {
+        color:#2b325f;
+    }
+
+    .top-20 {
+        margin-top: 50px;
+    }
+
+    .right-intro .typography-headline {
+        line-height: 1.4;
+    }
+
+    .main-full-page {
+        position: relative;
+        background-image: url(/images/partners.jpg);
+        text-align: center;
+        color: white;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <nav class="mynavbar navbar-inverse navbar-static-top">
+        <div class="nav-div"></div>
+        <div class="nav-container">
+            <div class="navbar-header row-offcanvas">
+                <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="offcanvas">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="brand-div">
+                    <a class="navbar-brand" href="#">爱梦想</a>
+                </div>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse sidebar-offcanvas">
+                <ul class="nav navbar-nav">
+                    <li class="linky"><a class="selected-nav" href="/idream/ambitions.html">全球招募</a></li>
+                    <li class="linky"><a href="/idream/rtour.html">关于爱梦想</a></li>
+                    <li class="linky"><a href="/idream/revolution.html">致投资者</a></li>
+                    <li class="linky"><a href="/idream/aboutus.html">创始人</a></li>
+                    <!--li><a id="nav-join" href="/idream/joinus.html" class="apple-hollow-button">我要报名</a></li-->
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <!--div class="main-full-page cover-img">
+            <div class="shade"></div>
+            <div class="flex-center">
+                <div class="center-content-7080">
+                    <h3 class="typography-headline">小米和爱梦想，你更愿意加入哪一个？</h3>
+                    <p class="small-text">未来三年毕业的大学生一定要关注的人才计划</p>
+                    <p>
+                        <a>
+                            <span class="weight-bold">爱梦想全球合伙人计划</span>
+                            <span>
+                                <svg class="svg-right" viewBox="0 0 16 12" width="100%" height="100%">
+                                       <path d="M15.7 6l-5.6 6H7.7l4.8-5.1H.3V5.2h12.2L7.7 0h2.4l5.6 6z"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div-->
+
+
+    <div class="invitation cover-img">
+        <div class="shade"></div>
+        <div class="flex-center">
+        <div class="center-content">
+            <h3 class="typography-headline-large">致王菲、华晨宇、李娜、小S</h3>  
+            <h3 class="typography-title-large">当今华人世界最受人喜爱的明星人物</h3>  
+            <a class="ButtonBox arrow-button">
+                <span class="ButtonBox-text">成为爱梦想公司特邀合伙人!</span>
+                <span class="ButtonBox-icon">
+                    <svg class="svg-right" viewBox="0 0 16 12" width="100%" height="100%">
+                        <path d="M15.7 6l-5.6 6H7.7l4.8-5.1H.3V5.2h12.2L7.7 0h2.4l5.6 6z"></path>
+                    </svg>
+                </span>
+            </a>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="main-section main-img cover-img flex-center">
+        <div>
+            <!--div class="">
+                
+            </div>
+            <div class="shade"></div class="main-intro left-leaning"-->
+
+            <div class="main-intro left-leaning">
+                <div class="text-container center-content">
+
+                <div class="carousel">
+                    <div class="company-cases">
+                        <h3 class="small-text">1995年，您应该加入亚马逊；</h3>                    
+                    </div>
+                    <div class="company-cases">
+                        <h3 class="small-text">1996年，您应该加入谷歌；</h3>                    
+                    </div>
+                    <div class="company-cases">
+                        <h3 class="small-text">1998年，您应该加入腾讯；</h3>                    
+                    </div>
+                    <div class="company-cases">
+                        <h3 class="small-text">1999年，您应该加入阿里巴巴；</h3>                    
+                    </div>
+                    <div class="company-cases">
+                        <h3 class="small-text">2004年，您应该加入facebook；</h3>                    
+                    </div>
+                </div>
+
+                <h3 class="typography-headline">今天，<br>您应该加入爱梦想</h3>     
+
+                <p>
+                    因为，爱梦想决心要超越前人，创造历史：用史上最多的股份造就史上最多的亿万富豪！
+                        <!--a>
+                            <span class="weight-bold">因为只有在创业初期加入</span>
+                            <span>
+                                <svg class="svg-right" viewBox="0 0 16 12" width="100%" height="100%">
+                                       <path d="M15.7 6l-5.6 6H7.7l4.8-5.1H.3V5.2h12.2L7.7 0h2.4l5.6 6z"></path>
+                                </svg>
+                            </span>
+                        </a-->
+                        <!--a class="ButtonBox arrow-button">
+                        <span class="ButtonBox-text">因为只有在创业初期加入</span>
+                        <span class="ButtonBox-icon">
+                            <svg class="svg-right" viewBox="0 0 16 12" width="100%" height="100%">
+                            <path d="M15.7 6l-5.6 6H7.7l4.8-5.1H.3V5.2h12.2L7.7 0h2.4l5.6 6z"></path>
+                        </svg>
+                        </span>
+                    </a-->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="one-two-images row no-gutters">
+
+            <div class="destiny-mission cover-img collum col-md-6 col-sm-12">
+                <div class="shade red-shade">
+                    <div class="center-content content-60 top-20">
+                        <h3 class="typography-eyebrow">这里，赋予您改变人类未来生活的远大使命</h3>
+                        <a>
+                            <svg class="play-circle" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ywfh cover-img collum col-md-6 col-sm-12">
+                <div class="shade">
+                    <div class="center-content content-60 top-20">
+                        <h3 class="typography-eyebrow">这里，给予您分享万亿市值的权利，给予您成为亿万富豪的梦想。</h3>
+                        <div class="hollow-container">
+                            <a class="hard-hollow-button">“12200YWFH”股份计划</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+        <!--div class="one-two-images row no-gutters">
+
+            <div class="destiny-mission cover-img collum col-md-6 col-sm-12">
+                <div class="shade red-shade">
+                    <div class="center-content content-60 top-20">
+                        <h3 class="typography-eyebrow">这里，赋予您改变人类未来生活的远大使命</h3>
+                        <a>
+                            <svg class="play-circle" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ywfh cover-img collum col-md-6 col-sm-12">
+                <div class="deep-shade">
+                    <div class="center-content content-60 top-20">
+                        <h3 class="typography-eyebrow">这里，给予您分享万亿市值的权利，给予您成为亿万富豪的梦想。</h3>
+                        <div class="hollow-container">
+                            <a class="hard-hollow-button">“12200YWFH”股份计划</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div-->
+
+    <div class="work-anywhere cover-img">
+            <div class="shade white-shade flex-center">
+                <div class="center-content content-60">
+                    <h3 class="typography-eyebrow ink-blue">这里，鼓励您自由选择在世界任何喜欢的地方工作和生活。</h3>
+                    <div class="hollow-container bright-red-text">
+                        <a class="hard-hollow-button">Work Anywhere!</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="ten-years cover-img">
+                <div class="right-intro">
+                    <h3 class="typography-headline"><span class="freedom-ribbon">这里，</span>您将参与成百上千个不可思议的项目。
+                    </h3> 
+
+                    <p>将挖掘任何领域的机会和潜力。将致力于改变人类的生活方式。将与全球12200名最为杰出的梦想家一起携手创造奇迹。</p>
+
+                    <div>
+                    <a class="ButtonBox">
+                        <span class="ButtonBox-text">关于爱梦想</span>
+                    </a>
+                    </div>
+                </div>
+    </div>
+
+
+
+    <footer>
+        <div class="inner-footer center-content">
+            <!--div class="nav foot-nav">
+                <div><a href="#">2200计划</a></div>
+                <div><a href="#about">股份激励</a></div>
+                <div><a href="#contact">使命和雄心</a></div>
+                <div><a href="#">2200计划</a></div>
+                <div><a href="#about">股份激励</a></div>
+                <div><a href="#contact">使命和雄心</a></div>
+            </div>
+            <div>
+                <hr>
+            </div-->
+            <div class="company-info">
+                <p>Copyright © 爱梦想（三亚）网络科技有限责任公司. All rights reserved.</p>
+                <br>
+                <p>邮箱及社交媒体：</p>
+            </div>
+            <div>
+                <a href="/images/weixinqrcode.jpg" target="_blank" class="social-media">                    
+                    <div>
+                        <img src="/images/wechat_icon.png">
+                    </div>
+                </a>
+                <a href="https://weibo.com/hiamx" target="_blank" class="social-media">
+                    <!--svg id="twitter-mask" viewBox="0 0 64 64" width="100%" height="100%">
+                        <path d="M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z"></path>
+                    </svg-->
+                    <div>
+                        <img src="/images/weibo_icon.png">
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/12200s" target="_blank" class="social-media">
+                    <svg id="facebook-mask" viewBox="0 0 64 64" width="100%" height="100%">
+                        <path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"></path>
+                    </svg>
+                </a>
+                <a href="amxsy@qq.com" target="_blank" class="social-media">
+                    <svg id="email-mask" viewBox="0 0 64 64" width="100%" height="100%">
+                        <path d="M41.1,25H22.9l9.1,7.1L41.1,25z M44,26.6l-12,9.3l-12-9.3V39h24V26.6z M0,0v64h64V0H0z M47,42H17V22h30V42z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js "></script>-->
+    <!--script src="js/bootstrap.min.js"></script-->
+
+    <script type="text/javascript">
+
+
+        window.onload = function() {
+            $.scrollAnimate();
+        };
+
+        $('.carousel').slick({
+        draggable: true,
+        slidesToShow: 1,
+        arrows: false,
+        dots: false,
+        fade: true,
+        autoplay: true,
+        speed: 1500,        
+        autoplaySpeed: 2000,
+        });
+
+
+    </script> 
+</body>
+
+</html>

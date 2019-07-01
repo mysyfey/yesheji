@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel='stylesheet' type='text/css' href='css/slick.css' />
+    <link rel='stylesheet' type='text/css' href='css/slick-theme.css' />
+    <link rel='stylesheet' type='text/css' href='css/bootstrap-grid.min.css' />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/apple-style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
+    <style type="text/css">
+    body {
+        letter-spacing: 1px;
+    }
+
+    .ButtonBox {
+        border-radius: 100px;
+    }
+
+    .d-nav {
+        //position: fixed;
+        z-index: 3;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .d-join {
+        position: absolute;
+        right: 10px;
+        font-size: 14px;
+        top: 15px;
+        color: white;
+    }
+
+    .d-join p {
+        text-align: center;
+    }
+
+    .d-toggle {
+        position: relative;
+        display: block;
+        z-index: 999;
+        padding: 10px;
+        left: 10px;
+        top: 5px;
+        width: 150px;
+    }
+
+    .d-circle {
+
+        position: relative;
+        width: 44px;
+        height: 44px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .3);
+        transition: -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+    }
+
+    .d-circle::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 46px;
+        height: 46px;
+        border: 4px solid #b4b4b4;
+        box-sizing: border-box;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+        transition: opacity .6s cubic-bezier(.645, .045, .355, 1), -webkit-transform .6s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .6s cubic-bezier(.645, .045, .355, 1), opacity .6s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .6s cubic-bezier(.645, .045, .355, 1), opacity .6s cubic-bezier(.645, .045, .355, 1), -webkit-transform .6s cubic-bezier(.645, .045, .355, 1);
+    }
+
+    .d-toggle:hover .d-circle::before {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        transition: opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), opacity .6s cubic-bezier(.215, .61, .355, 1);
+        transition: transform .6s cubic-bezier(.215, .61, .355, 1), opacity .6s cubic-bezier(.215, .61, .355, 1), -webkit-transform .6s cubic-bezier(.215, .61, .355, 1);
+    }
+    /*.d-circle::after {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        transition: -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1), -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        content: "";
+        width: 48px;
+        height: 48px;
+        background-color: #dc0032;
+        border-radius: 50%;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }*/
+
+    .icon-hamburger {
+        width: 14px;
+        height: 20px;
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate(0) scaleX(1);
+        transform: translate3d(-50%, -50%, 0) rotate(0) scaleX(1);
+        transition: -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1);
+        transition: transform .4s cubic-bezier(.645, .045, .355, 1), -webkit-transform .4s cubic-bezier(.645, .045, .355, 1);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        color: #dc0032;
+        line-height: 0;
+    }
+
+    .two-hundreds-text {
+        color: #dc0032;
+        font-weight: 800;
+        letter-spacing: 4px;
+    }
+
+    .d-idream {
+        position: absolute;
+        left: 69px;
+        top: 35%;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        white-space: nowrap;
+        font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    }
+
+    .colorful .d-idream {
+        color: black;
+    }
+
+    .nav_show .d-idream {
+        color: black;
+    }
+
+    .btn-plus {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        z-index: 9;
+        height: 34px;
+        width: 39px;
+    }
+
+    .btn-plus-inner {
+        position: absolute;
+        background-color: white;
+    }
+
+    .colorful .btn-plus-inner {
+        background-color: #dc0032;
+    }
+
+
+    .btn-plus-inner1 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 24px;
+    }
+
+    .btn-plus-inner2 {
+        height: 24px;
+        width: 2px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #fp-nav {
+        margin-top: 0;
+        top: auto;
+        bottom: 10%;
+    }
+
+    #fp-nav ul li a span {
+        background-color: #cbcbcb;
+        width: 6px;
+        height: 6px;
+        margin: -3px 0 0 -3px;
+    }
+
+    #fp-nav ul li a.active span,
+    #fp-nav ul li:hover a.active span {
+        background-color: #dc0032;
+        width: 6px;
+        height: 6px;
+        margin: -3px 0 0 -3px;
+    }
+
+    .bg-video-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3)
+    }
+
+    #container {
+        margin-top: -64px;
+    }
+
+    .about-title {
+        color: white;
+        background-color: #ff4d4c;
+    }
+
+    .container-wrapper {
+        padding: 0 45px;
+    }
+
+    .first-title .container-wrapper {
+        padding-top: 50px;
+    }
+
+    .content-wrapper {
+        margin: 0 auto;
+        max-width: 1080px;
+        padding-bottom: 75px;
+        padding-top: 75px;
+    }
+
+    .typography-card-subhead .small-medium {
+        margin-bottom: 13px;
+    }
+
+    .about-title .ButtonBox {
+        margin-top: 30px;
+    }
+
+
+    /*tools*/
+
+    .text_spill_3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .text_spill_5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+
+    /*tools_end*/
+
+    /*dream_list_normal*/
+
+    #dreams_list {
+        width: 83%;
+        margin: 0 auto;
+        padding: 13px 0;
+    }
+
+    .dreams_item {
+        justify-content: space-between;
+    }
+
+    .dreams_item_img {
+        padding-bottom: 50%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 2px;
+        margin: 1em -8px;
+    }
+
+    .dreams_item_title {
+        color: #bd27b8;
+        font-weight: 700;
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+        letter-spacing: -.025rem;
+        margin: 0;
+    }
+
+    .dreams_item_content {
+        font-weight: 430;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        letter-spacing: .10rem;
+        color: #464848;
+        margin-top: 1.4rem;
+        margin-right: 50px;
+    }
+
+    .dreams_item_content_more {
+          font-size: 16px;
+        height: 38px;
+        line-height: 33px;
+        border-radius: 100px;
+        padding: 0 16px;
+        margin-top: 35px;
+        color: #c74fc4;
+        border: 2px solid #c74fc4;
+        display: inline-block;
+        font-weight: bold;
+        text-shadow: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .dreams_item_title_2 {
+        color: #19b9b0;
+    }
+
+    .dreams_item_content_more_2 {
+        color: #19b9b0;
+        border: 2px solid #19b9b0;
+    }
+
+    #dreams_item_img_2_phone {
+        display: none;
+    }
+
+    .collum_center {
+        margin: 0 auto;
+    }
+
+
+    /*dream_list_normal_end*/
+
+
+    /*news_list_normal*/
+
+    #news_list {
+        padding: 100px 0 85px 0;
+        background-color: #f0f0f0;
+    }
+
+    .news_title_content_text {
+        text-align: center;
+        width:85%;
+        margin: 0 auto;
+        padding: 0px 15px;
+    }
+
+    .news_category-eyebrow {
+        margin-bottom: .6em;
+    }
+
+    .news_category-eyebrow_class {
+        font-size: 24px;
+        line-height: 1.16667;
+        font-weight: 400;
+        letter-spacing: .009em;
+        margin-bottom: .4em;
+    }
+
+    .news_category-eyebrow_title {
+        margin: 0;
+        font-size: 48px;
+        line-height: 1.08365;
+        font-weight: 600;
+        letter-spacing: -.003em;
+    }
+
+    .news_category-eyebrow_all {
+        display: inline-block;
+        margin: 26px 0 31px 0;
+        color: #4188ff;
+        font-size: 21px;
+        line-height: 1.38105;
+        font-weight: 400;
+        letter-spacing: .011em;
+        top: auto;
+        padding: 0;
+    }
+
+    /*news_list_normal_end*/
+
+
+    /*slider_normal*/
+
+    #slider {
+        margin-top: 20px;
+    }
+
+    .slide-item {        
+        padding: 0 36px;
+    }
+
+    .slide-item:focus { 
+        border: 0;
+        border-color: red;
+        border-width: 0;
+    }
+
+    .slide-item .small-medium {
+        opacity: 0;
+        margin: 0 auto;
+        padding: 33px 43px 0;
+        color: #25272b;
+        transition: opacity 1s;
+    }
+
+    .slide-item>div {
+        position: relative;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+
+    .slide-img {
+        padding-bottom: 52%;
+        margin: 0px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+    }
+
+    .slick-active .small-medium {
+        opacity: 1;
+
+    }
+
+    .slide-card-title {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: bold;
+        margin: .5em 0px;
+        padding: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 24px;
+        line-height: 1.16667;
+        font-weight: 600;
+        letter-spacing: .009em;
+    }
+
+    .slide-card-content {
+        overflow: hidden;
+        margin-top: 3px;
+        padding-top: 2px;
+        line-height: 1.42857143;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: -.022em;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .slide-card_data {
+        color: #609BFE;
+        display: block;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .075em;
+    }
+
+    .slick-dots {
+        bottom: -30px;
+    }
+
+    .slick-dots li button:before {
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+    /*slider_normal_end*/
+
+
+    .first-section {
+        color: white;
+        width: 100%;
+        position: relative;
+    }
+
+    .scroll-container {
+        //height: 550px asd; 
+        background-color: transparent;
+        overflow: hidden;
+        height: 750px;
+    }
+
+    .promise-placeholder {
+        height: 1550px;
+    }
+
+    .sticky-supported #section-challenge {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        height: 750px;
+        //height: 550px asd;
+    }
+
+    #section-challenge .section-content {
+        position: relative;
+        text-align: center; //justify-content: center;
+        color: white;
+        z-index: 5;
+    }
+
+
+    #section-challenge .cover-bg {
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image: url('images/jeansandipad.jpg');
+    }
+
+    #section-challenge .center-content {
+        padding-top: 250px;
+    }
+
+    #section-challenge .intro-content {
+        margin-top: 35px;
+    }
+
+    #section-promise {
+        position: sticky;
+        top: 750px;
+        background-color: white;
+    }    
+
+    #section-challenge .shade {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #recruitment {
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+        background-image: url('images/twitter3.jpg');
+        position: relative;
+        color: #fff;
+    }
+
+    .bottom-intro {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        width: 50%;
+    }
+
+    #first-article .typography-headline {
+        color:#c74fc4;
+    }
+
+    #second-article .typography-headline {
+        color:#19b9b0;
+    }
+
+    .news_category-eyebrow_all {
+        color: #6d6dfe;
+    }
+
+    .teeny-tiny {
+        color: #6d6dfe;
+        font-weight: 600;
+    }
+
+
+    @media only screen and (max-width: 1068px) {
+
+        #section-challenge .center-content {
+            padding-top: 170px;
+        }
+
+        #section-promise {
+            top: 550px ;
+        }
+
+        .sticky-supported #section-challenge {
+            height: 550px;
+        }
+
+        .scroll-container {
+            height: 550px;
+        }
+
+        .promise-placeholder {
+            height: 1050px;
+        }
+
+        #fp-nav {
+            z-index: 2;
+        }
+
+        .section-content {
+            width: 87.5%;
+        }
+
+        .btn-plus {
+            z-index: 999;
+        }
+
+        .nav_shade[bar-showing="true"] {
+            opacity: 0;
+        }
+
+        .header_nav {
+            width: 100vw;
+            text-align: center;
+            background-image: url(images/white-bg.jpg);
+        }
+
+        .nav_section {
+            width: 100vw;
+        }
+
+        .nav_show .btn-plus-inner {
+            background-color: #dc0032;
+        }
+
+        .social-media {
+            //bottom: 50pqx;
+            margin-left: 0;
+        }
+
+
+        .sm-text:after {
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .copyright span {
+            display: inline;
+        }
+
+         /*dream_list_ipad*/
+
+        #dreams_list {
+            width: 88%;
+        }
+
+        /*dream_list_ipad_end*/
+    }
+
+    @media only screen and (max-width: 735px) {
+
+
+        .glyphicon-play-circle {
+            font-size: 1em;
+        }
+
+        .small-medium {
+            font-size: 16px;
+        }
+
+        .ButtonPlay-circle {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .ButtonPlay-circle::before {
+            left: -1px;
+            top: -1px;
+            width: 62px;
+            height: 62px;
+            border: 4px solid #fff;
+        }
+
+
+        .ButtonPlay-circle-icon {
+            width: 17.5px;
+            height: 22.5px;
+            left: 23px;
+            top: 19px;
+        }
+
+        .ButtonPlay-circle-icon svg {
+            width: 17.5px;
+            height: 22.5px;
+        }
+
+        #section-challenge .section-content {
+            //text-align: left;
+        }
+
+        #recruitment {
+            height: 480px; 
+            margin-top: 50px;               
+        }
+
+        .bottom-intro {
+            width: 80%;
+        }
+
+        /*dream_list_phone*/
+
+         #dreams_list {
+            width: 100%;
+            padding: 0;
+        }
+
+        .dreams_item {
+            padding: 20px 20px;
+        }
+
+        .dreams_item_title {
+            font-size: 1.9rem;
+            line-height: 1.9rem;
+        }
+
+        .dreams_item_img {
+            padding-bottom: 100%;
+            margin: 1em 0;
+        }
+
+        .dreams_item_content_more {
+            font-size: 14px;
+            height: 32px;
+            line-height: 28px;
+            padding: 0 11px;
+            margin-top: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        #dreams_item_img_2_normal {
+            display: none;
+        }
+
+        #dreams_item_img_2_phone {
+            display: block;
+        }
+
+
+        /*dream_list_phone_end*/
+
+        
+        /*news_list_phone*/
+
+        #news_list {
+            //margin-top: 20px;
+            padding: 56px 0 52px 0;
+        }
+
+        .news_title_content_text {
+            padding: 0px 8px;
+            text-align: left;
+        }
+
+        .news_category-eyebrow {
+            margin-bottom: 8px;
+        }
+
+        .news_category-eyebrow_class {
+            font-size: 19px;
+            line-height: 1.21053;
+            font-weight: 400;
+            letter-spacing: .012em;
+            margin-bottom: 8px;
+        }
+
+        .news_category-eyebrow_title {
+            font-size: 32px;
+            line-height: 1.125;
+            font-weight: 600;
+            letter-spacing: .004em;
+        }
+
+        .news_category-eyebrow_all {
+            margin: 15px 0 18px 0;
+            font-size: 18px;
+            line-height: 1.4446;
+            letter-spacing: .012em;
+        }
+
+        /*news_list_phone_end*/
+
+
+        /*slider_phone*/
+
+        .slide-item {        
+            padding: 0 0.3%;
+        }
+
+        .slide-item .small-medium {
+            padding: 15px 20px;
+        }
+
+        .slide-card-title {
+            font-size: 16px;
+            margin: 5px 0 0 0;
+        }
+
+        .slide-card-content {
+            margin-top: 9px;
+            padding-top: 0;
+            font-size: 0.85em;
+        }
+
+        /*slider_phone_end*/
+    }
+
+    .big-button, .ButtonBox {
+        background-color: #ff4d4c;
+        color: white;
+    }
+
+    .ButtonBox {
+        margin-top: 25px;
+    }
+
+
+    </style>
+</head>
+
+<body class="apple-text">
+    <header class="d-nav">
+        <a class="d-toggle">
+            <div class="d-circle">
+                <div class="icon-hamburger">
+                    <svg viewBox="0 0 14 20" width="100%" height="100%">
+                        <path d="M6.7 0L5.4 4h7l1.3-4zM4.1 8l-1.3 4h7l1.3-4zM1.6 16L.3 20h7l1.3-4z"></path>
+                    </svg>
+                </div>
+                <!--div class="icon-hamburger icon-close">
+                    <svg viewBox="0 0 14 14" width="100%" height="100%">
+                        <path d="M13.5.5h-2.3L7 5.6 2.8.5H.5L5.9 7 .5 13.5h2.3L7 8.4l4.2 5.1h2.3L8.1 7z"></path>
+                    </svg>
+                </div-->
+            </div>
+            <span class="d-idream">爱梦想</span>
+        </a>
+        <!--div class="d-join">
+            <p class="red-text">200</p>
+            <p style="font-weight:600">我要加入</p>
+        </div-->
+        <a class="btn-plus">
+            <div class="btn-plus-inner btn-plus-inner1">&nbsp</div>
+            <div class="btn-plus-inner btn-plus-inner2">&nbsp</div>
+        </a>
+    </header>
+    <div id="container" class="sticky-supported">
+        <section>
+            <div id="section-challenge">
+                <div class="cover-bg">
+                    <div class="shade only-sticky scroll-anim" data-scroll-animation="{'startVal':0.3,'endVal':0.95,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':900}"></div>
+                    <div class="section-content">
+                        <div class="center-content sc-display">
+                            <h1 class="typography-headline-large only-sticky scroll-anim" data-scroll-animation="{'startVal':1,'endVal':0,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':250}" data-scroll-animation1="{'startVal':0,'endVal':-400,'cssAttr':'transform',
+                                    'beforeAttr' : 'translate(0px, ', 'afterAttr' : 'px)','willChange':'transform', 'topSpacing':0,'scrollLength':600}">
+                          <span class="typography-eyebrow eyebrow">挑战QQ、微信宣言</span>
+                          <span class="centeralign">我们要创建谷歌、facebook一样伟大的互联网公司，让世界因为我们而改变！</span>
+                        </h1>
+                            <div class="intro-content only-sticky scroll-anim" data-scroll-animation="{'startVal':0,'endVal':-250,'cssAttr':'transform',
+                                    'beforeAttr' : 'translate(0px, ', 'afterAttr' : 'px)','willChange':'transform', 'topSpacing':0,'scrollLength':700}"  data-scroll-animation1="{'startVal':0,'endVal':1,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':250}">
+
+                                <p class="typography-intro">
+                                    曾有人说，
+                                    <br> 梦想使人变得伟大！
+                                    <br> 但我认为，
+                                    <br> 梦想至少让人变得勇敢，
+                                    <br> 使人敢做敢为。
+                                    <br>
+                                    <br> 挑战QQ的想法，
+                                    <br> 最初是为了激励我的学生们，
+                                    <br> 是为了我那个要变革教育的梦想。
+                                </p>
+                                <!--button id="dclr-button" class="big-button more-link">阅读宣言</button-->
+                                 <a class="ButtonBox">
+                        <span class="ButtonBox-text">阅读宣言</span>
+                        <span class="ButtonBox-icon">
+                            <svg>
+                                <path d="M9.8.5H8.2l5.6 5.9H.1v1.2h13.7l-5.6 5.9h1.6L15.9 7z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="second-section">
+            <div id="section-promise">
+                
+                <div id="dreams_list">
+                    <div id="first-article" class="dreams_item row no-gutters flex-center">
+                        <div class="collum col-md-6 offset-md-0 col-sm-12 dreams_item_img" style="background-image: url(images/8.jpg);"></div>
+
+                        <div class="collum col-md-5 col-sm-12 card-holder">
+                            <h3 class="typography-headline" >十年的千亿市值之约</h3>
+
+                            <div>
+                                <p class="typography-eyebrow text_spill_5">十年之内，爱梦想的市值要实现千亿美金，同时爱梦想要向世界贡献200名亿元级富豪和2000名千万级富豪（美元）。二十之内，爱梦想要与阿里，腾讯，facebook，亚马逊，谷歌，apple等全球市值最大的公司相比肩，成为市值超过4000亿美金的公司，届时除了200名合伙人早已身价数以美金外，2000名持有万分之一股份的合伙人也要成为步入价值数以人民币的富豪之列。</p>
+
+                                <a class="dreams_item_content_more">更多内容</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="second-article" class="dreams_item row no-gutters flex-center">
+                        <div id="dreams_item_img_2_phone" class="collum col-md-6 offset-md-0 col-sm-12 dreams_item_img" style="background-image: url(images/9.jpg);"></div>
+
+                        <div class="collum collum_center col-md-5 col-sm-12 card-holder">
+                            <h3 class="typography-headline" >全球化的进程</h3>
+
+                            <div>
+                                <p class="typography-eyebrow text_spill_5">我们所有人为之着迷，置身于能够实现真我之地。在工作场所以及其他地域，包容的文化尤为重要。因此请展现真我风采。我们将真诚以待。</p>
+                            </div>
+
+                            <a class="dreams_item_content_more dreams_item_content_more_2">更多内容</a>
+                        </div>
+
+                        <div id="dreams_item_img_2_normal" class="collum col-md-6 offset-md-0 col-sm-12 dreams_item_img" style="background-image: url(images/9.jpg);"></div>
+                    </div>
+                </div>
+
+
+                <div id="recruitment">
+                    <div class="shade"></div>
+                    <div class="bottom-intro">
+                        <h1 class="typography-headline-large">打造史上产生亿万富豪数量最多的创业团队！</h1>
+                        <p class="typography-intro">。“爱梦想要用40%股份，在全球范围招募2200精英人才，组建合伙人创业团队。”
+                        </p>
+                        <a class="ButtonBox">
+                        <span class="ButtonBox-text">全球招募正在进行</span>
+                        <span class="ButtonBox-icon">
+                            <svg>
+                                <path d="M9.8.5H8.2l5.6 5.9H.1v1.2h13.7l-5.6 5.9h1.6L15.9 7z"></path>
+                            </svg>
+                        </span>
+                    </a>
+                    </div>
+                </div>
+
+
+                <div id="news_list">
+                    <div class="news_title_content_text">
+                        <div class="news_category-eyebrow">
+                            <span class="typography-eyebrow">UPDATE</span>
+                        </div>
+                        <div>
+                            <h3 class="typography-headline">新闻动态</h3>
+                        </div>
+                        <a href="" class="news_category-eyebrow_all">
+                            <span class="icon-shim">查看爱梦想以往全部的历史动态 ></span>
+                        </a>
+                    </div>
+                    <div id="slider">
+                        <div class="slide-item">
+                            <div>
+                                <div class="slide-img" style="background-image: url(images/5.jpg);"></div>
+                                <div class="small-medium">
+                                    <span class="teeny-tiny">2018年 3月 28日</span>
+                                    <p class="slide-card-title">千分之一股份价值几何?</p>
+                                    <p class="text_spill_3">这是一个有着巨大想象空间的命题。下面我们使用一组数据来呈现出一个个令人兴奋的答案...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-item">
+                            <div>
+                                <div class="slide-img" style="background-image: url(images/9.jpg);"></div>
+                                <div class="small-medium">
+                                    <span class="teeny-tiny">2018年 2月 16日</span>
+                                    <p class="slide-card-title">我们的十年之约?</p>
+                                    <p class=" text_spill_3">十年之约，我们将打造4千亿市值的上市公司...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-item">
+                            <div>
+                                <div class="slide-img" style="background-image: url(images/9.jpg);"></div>
+                                <div class="small-medium">
+                                    <span class="teeny-tiny">2018年 1月 21日</span>
+                                    <p class="slide-card-title">成百上千个改变世界的项目?</p>
+                                    <p class=" text_spill_3">未来，爱梦想将会成立成百上千个改变世界的项目，以此来提升...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-item">
+                            <div>
+                                <div class="slide-img" style="background-image: url(images/9.jpg);"></div>
+                                <div class="small-medium">
+                                    <span class="teeny-tiny">2018年 1月 6日</span>
+                                    <p class="slide-card-title">200名亿万富豪?</p>
+                                    <p class=" text_spill_3">这是一个有着巨大想一答案...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-item">
+                            <div>
+                                <div class="slide-img" style="background-image: url(images/9.jpg);"></div>
+                                <div class="small-medium">
+                                    <span class="teeny-tiny">2017年 11月 25日</span>
+                                    <p class="slide-card-title">互联网时代的公司革命?</p>
+                                    <p class=" text_spill_3">这是一个有着巨大想一答案...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="promise-placeholder"></div>
+        </section>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type='text/javascript' src='js/slick.min.js'></script>
+    <script type='text/javascript' src='js/scrollAnimate.js'></script>
+    <script type='text/javascript' src='js/utilities.js'></script>
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js "></script>-->
+    <!--script src="js/bootstrap.min.js"></script-->
+    <script type="text/javascript">
+    //window.onload = function() {
+
+        //$.scrollAnimate();
+    //};
+
+    if (!window.utilities.cssPropertyValueSupported('position', 'sticky') &&
+        !window.utilities.cssPropertyValueSupported('position', '-webkit-sticky')) {
+        alert("sticky not supported");
+        $("main").removeClass("sticky-supported");
+        $(".only-sticky").removeClass("scroll-anim");
+    }
+
+
+    if (window.matchMedia("(max-width: 735px)").matches) {
+        $('#slider').slick({
+        draggable: true,
+        centerMode: true,
+        slidesToShow: 1,
+        centerPadding:'23px',
+        arrows: false,
+        dots: true,
+        // autoplay: true,
+        autoplaySpeed: 3000,
+        });
+
+        $('#section-challenge .shade').attr("data-scroll-animation", 
+            "{'startVal':0.3,'endVal':0.95,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':700}");
+
+        $('#section-challenge .typography-headline-large').attr("data-scroll-animation", 
+            "{'startVal':1,'endVal':0,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':250}");
+
+        $('#section-challenge .typography-headline-large').attr("data-scroll-animation1","{'startVal':0,'endVal':-300,'cssAttr':'transform', 'beforeAttr' : 'translate(0px, ', 'afterAttr' : 'px)','willChange':'transform', 'topSpacing':0,'scrollLength':500}");
+
+        $('#section-challenge .intro-content').attr("data-scroll-animation", 
+            "{'startVal':0,'endVal':-280,'cssAttr':'transform', 'beforeAttr' : 'translate(0px, ', 'afterAttr' : 'px)','willChange':'transform', 'topSpacing':0,'scrollLength':450}");
+
+        $('#section-challenge .intro-content').attr("data-scroll-animation1", "{'startVal':0,'endVal':1,'cssAttr':'opacity', 'topSpacing':0,'scrollLength':200}");
+
+    } else {
+        $('#slider').slick({
+        draggable: true,
+        centerMode: true,
+        slidesToShow: 1,
+        centerPadding:'27.3%',
+        arrows: false,
+        dots: true,
+        //autoplay: true,
+        //autoplaySpeed: 3000,
+    });
+    }
+
+    $.scrollAnimate();
+
+
+    </script>
+</body>
+
+</html>

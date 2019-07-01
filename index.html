@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+
+
+<style>
+
+    body{
+      font-size: 17px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    /*ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {*/
+    ul, li, h1, h2, h3, h4, h5, h6, p, blockquote, figure, form, input, button {
+      margin: 0;
+      padding: 0;
+    }
+
+    p+*, ul+*, ol+* {
+      margin-top: .7em;
+    }
+
+    header {
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.93);
+      box-shadow: 0 0 1px 0 darkgrey;
+      position: fixed;
+      z-index: 3;
+      right: 0;
+      left: 0;
+      top: 0;
+    }
+
+    #aimengxiang {
+        line-height: 50px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 4px;
+    }
+
+    .menu-down {
+      font-family: iconfont;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    margin-left: -25px;
+    line-height: 50px;
+    margin-top: 5px;
+    top: 0;
+    font-weight: 600;
+    }
+
+    #join-us {
+    color: #fff;
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    font-size: 10px;
+    padding: 2px 7px;
+    font-weight: 500;
+    background-color: #FF365D;
+    border: 1px solid #df0202;
+    border-radius: 4px;
+    }
+
+    .gallery{      
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      left: 50%;
+      margin-left: -720px; 
+    }
+
+    #bg-shade {
+      background: #000;
+      opacity: .3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .cross-fader-img {
+      position: absolute;
+      /*top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;*/
+      overflow: hidden;
+      background-position: center;
+      background-size: cover;
+      height: 1586px;
+      width: 1440px;
+    }
+
+    .cross-fader-prev-img {
+      z-index: 1;
+    }
+
+    .cross-fader-inactive-img {
+      z-index: 0;
+    }
+
+    .cross-fader-active-img {
+      //opacity: 1;
+      z-index: 2;
+      -webkit-animation: fade-zoom-in-image 4s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+      animation: fade-zoom-in-image 4s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+      //transform: scale(1);
+
+    }
+
+    @keyframes fade-zoom-in-image{
+      0%{opacity:0;-webkit-transform:scale(1.02);transform:scale(1.02)}
+      100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}
+    }
+
+    .show {
+      z-index: 2;
+    }
+
+
+
+    .main-section{
+      padding-top: 120px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-bottom: 4px solid #fff;
+    }
+
+
+
+    .section-content {
+      position: relative;
+      z-index: 10;
+      margin-left: auto;
+      margin-right: auto;
+      width: 980px;
+    }
+
+    .rwo :before, .row:after {
+      content: ' ';
+      display: table;
+    }
+
+    .row:after {
+      clear: both;
+    }
+
+    .column {
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      float: left;
+      min-height: 2px;
+    }
+
+    .partner-headline {
+      padding-top: 180px;
+      max-width: 720px;
+      transform: translateZ(0);
+      width: 66.66667%;
+    }
+
+    .eyebrow-hero {
+      font-size: 24px;
+      letter-spacing: .015em;    
+    }
+
+    .eyebrow {
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: .016em;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .partner-typography {
+      font-size: 56px;
+      line-height: 1.10746;
+      font-weight: 600;
+      letter-spacing: .004em;
+    }
+
+    .headline {
+      margin-top: .75em;
+      max-width: 580px;
+    }
+
+    .partner-headline-overview {
+      width: 50%;
+      margin-top: .75em;
+      max-width: 580px;
+    }
+
+    .intro {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: .017em;
+    }
+
+    .semi-bold {
+      font-weight: 600;
+    }
+
+    .eyebrow+* {
+      margin-top: 0;
+    }
+
+
+    #world-partners{
+      padding-top: 0;
+      color: #fff;
+    }
+
+    #open-letter {
+      background-image: url(./imgs/open-letter-bg.jpg);
+      background-repeat: repeat;
+    }
+
+    .image-open-letter  {
+      width: 2560px;
+      height: 1546px;
+      background-repeat: no-repeat;
+      left: 50%;
+      margin-left: -1280px;
+      position: relative;
+      margin-top: -660px;
+    }
+
+    .section-headline {
+      margin: 50px 0;
+      font-size: 48px;
+      line-height: 1.04167;
+      letter-spacing: .006em;
+    }
+
+    .letter-headline {
+      width: 50%;
+    }
+
+    .letter-headline-overview {
+      width: 50%;
+    }
+
+    .stock-value {
+      width: 25%;
+      margin-left: 8.33333%;
+    }
+
+    .value-item {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+
+    .badge {
+      color: #333;
+      display: inline-block;
+      font-size: 20px;
+      min-width: 5em;
+      position: relative;
+      margin-right: 2em;
+      width: 100%;
+      max-width: 180px;
+    }
+
+    .badge-content {
+      margin: 1em 0;
+      padding-top: 6px;
+      padding-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-value {
+      font-size: 68px;
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: .003em;    
+      display: block;
+      position: relative;
+      white-space: nowrap;
+      z-index: 1;
+      left: -2px;
+    }
+
+    .badge-caption {
+      font-size: 15px;
+      line-height: 1.26667;
+      letter-spacing: -.014em;
+      color: #666;
+      display: block;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 1;
+      left: 0;
+    }
+
+    @media only screen and (min-width: 1442px) {
+
+      #world-partners {
+        //height: 1586px;
+        height: 1300px;
+      }
+
+      .cross-fader-img{
+        width: 2560px;
+        height: 1586px;
+      }
+
+      .gallery {
+        margin-left: -1280px;
+      }
+    }
+
+
+    @media only screen and (max-width: 1068px) {
+
+      #world-partners {
+        height: 1024px;
+      }
+
+      .main-section{
+        padding-top: 80px;
+      }
+
+      #open-letter{
+        //padding-top: 300px;
+      }
+
+      .cross-fader-img {
+        height: 1024px;
+        width: 1068px;
+      }
+
+      .gallery {
+        margin-left: -534px;
+      }
+
+      .section-content {
+        width: 692px;
+      }
+
+      .partner-headline {
+        width: 83.33333%;
+        max-width: 580px;
+      }
+
+      .eyebrow-hero {
+        font-size: 22px;
+        letter-spacing: .016em;
+      }
+
+      .eyebrow {
+        font-size: 20px;
+        letter-spacing: .017em;
+      }
+
+      .partner-typography {
+        font-size: 48px;
+        line-height: 1.125;
+        letter-spacing: .006em;
+      }
+
+      .partner-headline-overview {
+        max-width: 480px;
+        width: 66.66667%;
+      }
+
+      .intro {
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: .017em;
+      }
+
+      .image-open-letter  {
+        margin-top: -555px;
+        margin-left: -534px;
+        left: 50%;
+        width: 1068px;
+        height: 1000px;
+      }
+
+      .section-headline {
+        margin: 36px 0;
+        font-size: 40px;
+        line-height: 1.05;
+        letter-spacing: .008em;
+        font-weight: 500;
+      }
+
+      .letter-headline {
+        width: 66.66667%;
+      }
+
+      .stock-value {
+        margin-left: 16.66667%;
+      }
+
+      .badge-content {
+        padding-top: 4px;
+        padding-bottom: 0;
+      }
+
+      .badge-value {
+        font-size: 58px;
+        line-height: 1.10345;
+        letter-spacing: .005em;
+      }
+
+      .badge-caption {
+        font-size: 14px;
+        line-height: 1.28583;
+        letter-spacing: -.01em;
+      }
+
+    }
+
+    @media only screen and (max-width: 735px) {
+
+
+      #world-partners {
+        height: auto;
+      }
+
+      .main-section{
+        padding-top: 90px;
+      }
+
+      #open-letter{
+        color: #333;
+        padding-top: 90px;
+      }
+
+      .gallery {
+        margin-left: -368px;
+      }
+      
+      .cross-fader-img {
+         height: 558px;
+         width: 736px;
+      }
+
+      .section-content {
+        width: 87.5%;
+      }
+      
+      .partner-headline {
+        padding-top: 210px;
+        height: 558px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .eyebrow-hero {
+        font-size: 21px;
+        letter-spacing: .016em;
+      }
+
+      .eyebrow {
+        font-size: 19px;
+        letter-spacing: .018em;
+        margin-bottom: 18px;
+      }
+
+      .partner-typography {
+        font-size: 38px;
+        line-height: 1.15825;
+        letter-spacing: .009em;
+      }
+
+      .headline {
+        max-width: 100%;
+        margin-top: 0;
+      }
+
+      .partner-headline-overview {
+        padding: 80px 0 80px;
+        color: #333;
+        max-width: 100%;
+        margin-top: 0;
+        width: 100%;
+      }
+
+      .intro {
+        font-size: 19px;
+        line-height: 1.47384;
+        letter-spacing: .018em;
+      }
+
+      .image-open-letter  {
+        margin-top: -200px;
+        margin-left: 0;
+        margin-right: auto;
+        height: auto;
+        width: 100%;
+        left: auto;
+        right: auto;
+        background-position: 50% 50%;
+        background-size: 100% auto;
+        padding-bottom: 195.38043%;
+      }
+
+      .section-headline {
+        margin: 20px 0;
+        font-size: 31px;
+        line-height: 1.09703;
+        letter-spacing: .011em;
+      }
+
+      .letter-headline {
+        width: 83.33333%;
+      }
+
+      .letter-headline-overview {
+        width: 100%;
+      }
+
+      .stock-value {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .stock-column {
+        margin-top: 50px;
+        overflow: hidden;
+        padding-bottom: 50px;
+      }
+
+      .value-item {
+        text-align: center;
+      }
+
+      .badge {
+        padding-bottom: 0;
+        margin-right: 0;
+      }
+
+      .badge-value {
+        font-size: 48px;
+        line-height: 1.04167;
+        letter-spacing: .006em;
+      }
+
+      .badge-caption {
+        font-size: 13px;
+        line-height: 1.30775;
+        letter-spacing: -.005em;
+      }
+
+    }
+
+
+</style>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a class="menu-down">
+         &#xe65e;
+        </a>
+
+        <div id="aimengxiang">
+          爱梦想
+        </div>
+
+        <div id="join-us" class="red-button">加入我们</div>
+    </header>
+
+    <main role="main">
+
+      <section id="world-partners" class="main-section">
+
+        <div class="section-content row">
+          <div class="partner-headline column">
+            <h2 class="eyebrow eyebrow-hero">
+            2018 爱梦想从招募开始
+            </h2>
+            <h3 class="partner-typography">
+              让我们一起再为世界贡献200名亿万富豪
+            </h3>
+          </div>
+          <div class="partner-headline-overview column">
+
+             <p class="intro semi-bold">
+             爱梦想要用40%的股份，通过互联网公开在全球招募200名合伙人，每位合伙人将至少拥有爱梦想千分之一的股份份额。全球合伙人计划，是2018年爱梦想献给世界的礼物。
+             </p>
+
+             <p class="intro">
+              我们在此向大家宣告，在互联网时代，我们再也不用拘泥于空间上的距离，再也不用频繁穿越于国与国之间的高墙，我们可以在网上与来自世界各地的精英人才一起创业，一起创办公司，一起实现伟大的梦想。同时也要告诉大家，我们之所以不惜用40%的股份去招募拥有共同梦想的合作伙伴，因为我们认为无论公司未来能取得多大的成就，归根结蒂，所有的一切都源于最初敢于拼搏付出的每一位创业者，他们理所应当成为公司的主人，理所应当享有未来巨大回报的权利。
+             </p>
+
+          </div>
+        </div>
+
+        <div class="gallery">
+            <div class="cross-fader-img show" style="background-image:url(./imgs/partners1.jpg)">
+            1
+            </div>
+            <div class="cross-fader-img cross-fader-inactive-img" style="background-image:url(./imgs/partners2.jpg)">
+            2
+            </div>
+            <div class="cross-fader-img cross-fader-prev-img" style="background-image:url(./imgs/partners3.jpg)">
+            3
+            </div>
+            <!--div class="cross-fader-img show" style="background-color:green">
+            1
+            </div>
+            <div class="cross-fader-img cross-fader-inactive-img" style="background-color:red">
+            2
+            </div>
+            <div class="cross-fader-img cross-fader-prev-img" style="background-color:brown">
+            3
+            </div-->
+          
+        </div>
+        
+      </section>
+
+      <section id="open-letter" class="main-section">
+
+        <div class="section-content">
+
+        <div class="row">
+
+          <div class="letter-headline column">
+            <h2 class="eyebrow eyebrow-hero">
+            来自爱梦想创始人的公开信:
+            </h2>
+            <h3 class="section-headline">
+              “您是要卖一辈子糖水呢，还是与我们一起去改变世界！”
+            </h3>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="letter-headline-overview column">
+            <p>2010年，当我的两个创业伙伴还只是十四、五岁孩子的时候，我们高喊着“挑战QQ”的口号，走上了学习探索聊天软件的成长道路。</p>
+            
+            <p>四年之后，第一款功能完善的聊天软件在windows系统上成功运行，这让我们很受鼓舞。2014年国庆，我们一起来到美丽的三亚，先后成立了爱梦想（三亚）和爱梦想（香港），迫不及待的拉开了奔向未来的序幕。</p>
+            
+            <p>很快一年之后，安卓系统、ios系统聊天软件客户端也终于大功告成，并实现了服务器端的协同运作。</p>
+            
+            <p>多年的勤奋努力和对梦想的热爱，让我们的人生一天天发生着传奇般的改变。2016年6月，挑战QQ（微信）宣言正式发布， “我们要创建谷歌、facebook一样伟大的互联网公司，让世界因为我们而改变！”，我们被赋予了更大的使命。</p>
+            
+            <p>几乎从那一刻开始，一个全新的课题，一个从未有过的挑战摆在了面前：我们需要一个能让爱梦想实现伟大使命的创业团队。我们的角色将不再仅仅是一个创作软件的程序员：做更多的工作，思考更为复杂的问题，承担更为艰难的任务，我们需要让自己变得更加成熟。</p>
+
+            <p>然而，无论要做什么样的事情，我们从来都是投入巨大的热情和创造力，总是把要求放到很高的刻度，总是为自己找到需要挖掘很大潜能才能攻克的难题。</p>
+            
+            <p>“yes, we did it！”，我们又一次听到了这样的声音。这是每攻克一个难关，每完成一次挑战洋溢着喜悦的欢呼声。</p>
+
+            <p>这就是，“全球合伙人计划”，又一次充满想象力的构思，又一次独具一格的大胆设计，又一次在新的领域实现创新和突破；这就是，“让我们一起再为世界贡献200名亿万富豪”热情豪迈的邀请；这就是，为了实现“创建谷歌、facebook一样伟大的互联网公司”，我们脚踏实地、毫无侥幸的人生态度。</p>
+
+            <p>此时此刻，我们相信 ，无论您身在中国大陆，还是遥远的美国硅谷，无论您属于韩国、日本，还是欧盟二十八国，都不用再为实现共同的梦想而担心，因为"全球合伙人计划"是如此的开明和大胆，我们的真诚和创新已经让所有的问题变得简单。</p>
+
+            <p><strong>正如乔布斯先生那句震荡人心的邀请，“您是要卖一辈子糖水呢，还是与我们一起去改变世界？”</strong></p>
+          </div>
+
+          <div class="stock-value column">
+            <div class="stock-column row">
+
+              <div class="value-item">
+                <figure class="badge">
+                  <div class="badge-content">
+                    <span class="badge-value">8896</span>
+                    <span class="badge-caption">拥有apple千分之一的股份，您就是身价超过8亿美元的亿万富豪。</span>
+                  </div>
+                </figure>
+              </div>
+
+              <div class="value-item">
+                <figure class="badge">
+                  <div class="badge-content">
+                    <span class="badge-value">7558</span>
+                    <span class="badge-caption">假如要收购google千分之一的股份，您至少需要7亿美元现金。</span>
+                  </div>
+                </figure>
+              </div>
+              
+              <div class="value-item">
+                <figure class="badge">
+                  <div class="badge-content">
+                    <span class="badge-value">4768</span>
+                    <span class="badge-caption">就算是腾讯股份的千分之一，您也已是接近5亿美元的亿万富豪了。</span>
+                  </div>
+                </figure>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+        <figure class="image-open-letter" style="background-image:url(./imgs/open-letter.jpg)"></figure>
+        
+      </section>
+
+      <!--script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js "></script-->
+      <script src="./js/jquery.min.js"></script>
+      <script type="text/javascript">
+        window.onload=function(){
+          //alert("ready!");
+         var show = true;
+         var cfIndex = 2;
+         var activeElement = $(".show");
+         var prevElement = $(".cross-fader-prev-img");
+         var imgsCount = $(".gallery .cross-fader-img").length;
+
+         setInterval(function(){ 
+          if(show){
+            activeElement.removeClass("show");
+            show = false;
+          }
+
+            var ele = $(".gallery > div:nth-child(" + cfIndex + ")");
+            //alert(ele.text());
+
+            prevElement.removeClass("cross-fader-prev-img");
+            prevElement.addClass("cross-fader-inactive-img");
+            prevElement= activeElement;
+
+            activeElement.removeClass("cross-fader-active-img");
+            activeElement.addClass("cross-fader-prev-img");
+
+            ele.removeClass("cross-fader-inactive-img");
+            ele.addClass("cross-fader-active-img");
+            activeElement = ele;
+
+            if(cfIndex < imgsCount)
+              cfIndex++;
+            else 
+              cfIndex = 1;
+
+          }, 6000);
+         };
+      </script>
+
+    </main>
+</body>
