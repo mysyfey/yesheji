@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link rel="stylesheet" href="/ap.css" type="text/css" />
+    <script src="/js/jquery.min.js"></script>
+    <!--script type='text/javascript' src='js/bootstrap.min.js'></script-->
+    <script type='text/javascript' src='/js/offcanvas.js'></script>
+    <script type='text/javascript' src='/js/slick.min.js'></script>
+    <script type='text/javascript' src='/js/scrollAnimate.js'></script>
+    <script type='text/javascript' src='/js/utilities.js'></script>
+<style type="text/css">
+
+    body{
+        font-size:17px;
+        line-height: 1.47059;
+        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+        
+    }
+
+    main{
+        margin-top:-1px;
+        padding-top:1px;
+    }
+
+    thick {
+        font-weight: bold;
+    }
+
+    .section{
+        position: relative;
+        //overflow: hidden;
+        padding-bottom: 150px;
+    }
+
+    .theme-dark {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .apple-grey {
+        color: #b2b2b2;
+    }
+
+    .sticky-thing{
+        position: sticky;
+        height:100vh;
+        top:0;
+    }
+
+    .sticky-after{
+        position: relative;
+    }
+
+    .apb-section-content .center-content:last-child {
+        width: 715px;
+    }
+
+
+    .headline {
+        margin-top: 80px;
+        margin-bottom: 72px;
+    }
+
+    .headline .typography-headline-super{
+        margin-top: 0.1em;
+    }
+
+    .centeralign{
+        padding-left: 0.4em;
+    }
+
+    .plan-img{
+        z-index: 1;
+        width: 1442px;
+        height: 902px;
+        background-size: 1442px 902px;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-image: url('/images/iphonexr.jpg');
+        position: relative;
+        overflow: hidden;
+        left: calc(50% - 965px);
+    }
+
+    .big-img{
+        width: 1442px;
+    }
+
+    .typography-title-large {
+        line-height: 1.125;
+        font-weight: 600;
+        letter-spacing: .004em;
+    }
+
+    .plan-intro {
+        margin-top: -229px;
+    }
+
+    a:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .the-most{
+        height: 900px;        
+        background-image: url('/images/blueiphone.jpg');
+        display:flex;
+        align-items: center;
+    }
+
+
+
+    .carousel {
+        width: 55%;
+        height:100vh;
+    }
+
+    .carousel figure {
+        position: absolute;
+        background-position: top,center;
+        transition: opacity 500ms ease-in;
+    }
+
+    .left-column-text{
+        position: absolute;
+        top:0;
+        right: 18%;
+        width: 300px;
+        height: 100vh;
+    }
+
+    .carousel-section{
+        margin-top: 90px;
+    }
+
+    .top-text {
+        top: 25vh;
+    }
+
+    .fangan{
+        margin-top: -100vh;
+    }
+
+    .apple-nav {
+        height: 52px;
+        z-index: 9997;
+        top:0;
+        position: fixed;
+        width:100%;
+        background-color: rgba(0,0,0,0.85);
+        font-size: 18px;
+        line-height: 1.14286;
+        //font-weight: 600;
+        letter-spacing: .011em;  
+        color:#fff;     
+    }
+
+    .apple-nav:after {
+        background-color: rgba(51,51,51,0.75);
+        margin-left: 0;
+        left: 0;
+        width: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 100%;
+        height: 1px;
+        z-index: 1;
+    }
+
+    .apple-nav div{
+        height: 100%;
+    }
+
+    .shade 
+    {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+
+    .first-section {
+        color:#fff;
+        height: 230vh;
+    }    
+
+    .main-content-section {        
+        background: #fff;         
+        margin-top: -100vh;
+    }
+
+    .main-intro {
+        padding:150px 0;
+    }
+
+    .theplan {
+        text-align: center;
+    }
+
+    .fluid-content {
+        color:black;   
+    }
+
+
+    .pillar-section {
+
+    }
+
+    .pillar-headline {
+        color:#fff;
+    }
+
+    .pillar-content {
+        background: white;
+
+    }
+
+    .pillar {
+        padding-bottom:18vh;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+        .main-intro {
+            padding:80px 0;
+        }
+        .pillar-headline {
+            width:calc(100vw - 12.5vw);
+        }
+    }
+
+
+
+</style>
+
+
+    
+</head>
+
+<body>    
+
+    <nav class="apple-nav">
+        <div class="apb-section-content vertical-align">
+            <h2>爱梦想</h2>
+        </div>
+    </nav>
+
+    <main>
+       
+        <div class="first-section apb-fullscreen">
+
+            <figure class="sticky-thing cover-img" style="background-image:url(/images/earth.jpg)">
+
+                <div class="shade"></div>
+
+                <div class="theplan sticky-after one-hundred-section vertical-align">
+                    <div class="center-content scroll-anim" 
+                        data-scroll-animation="{
+                        'startVal':1,
+                        'endVal':0,
+                        'cssAttr':'opacity',
+                        'willChange':'opacity', 
+                        'topSpacing':0,
+                        'scrollLength':55, 
+                        'scrollUnit':'vh'}" 
+                        data-scroll-animation1="{'startVal':0,'endVal':-3,'cssAttr':'transform',
+                                    'beforeAttr' : 'translate(0px, ', 'afterAttr' : 'px)','willChange':'transform', 'topSpacing':0,'scrollLength':70, scrollUnit:'vh',attrUnit: 'vh'}" 
+                        >
+                        <h2 class="typography-headline-mega">
+                            <span class="unmasked">爱梦想方案</span>
+                            <br>
+                            
+                        </h2>
+                        <p class="typography-headline-large">打造另一个万亿美元市值公司。</p>
+                    </div>
+                </div>
+            </figure>
+
+        </div>
+
+        <div class="sticky-after main-content-section">
+            
+            <div class="main-intro">
+                <div class="fluid-content center-content">
+                    <h3 class="typography-manifesto">
+                        想象一下，如果虚拟和现实世界之间没有了界限，那将会怎样？
+                        <br><br>
+                        你可以坐在宇宙星辰之间听课。
+                        你可以亲眼目睹历史长河中消逝的一幕幕。
+                        即使是那些熟悉的事物，你也可以见识到它们前所未见的一面。
+                        <br><br>
+                        有了 iPhone 和 iPad，这样的体验将不仅仅是一种可能，而是真真切切的感受。增强现实以一种全新的方式利用了现有技术，让你的工作、学习、玩乐，以及与周围世界的联系，都将发生蜕变。而这一切仅仅只是开始。
+                        <br><br>
+                        一个全新的世界，正在欢迎你的到来。
+                    </h3>
+                </div>
+            </div>
+
+
+            <div class="pillar-section">
+
+            <figure class="sticky-thing cover-img" style="background-image:url(/images/ar.jpg)">
+                <div class="shade"></div>
+            </figure>
+
+            <div class="sticky-after one-hundred-section one-hundred-up vertical-align">
+                <div class="center-content pillar-headline">
+                        <h2 class="typography-headline-super">
+                            60%股份，12200名合伙人。
+                        </h2>
+                </div>
+            </div>
+
+            <div class="sticky-after pillar">
+                <div class="pillar-content fluid-content center-content">
+                    <div class=" manifesto-content fluid-content-padded">
+                    <div class="masked-text orange-mask">
+                        <h2 class="typography-headline-super">
+                            60%股份，
+                            <br>
+                            招募12200名合伙人。
+                        </h2>
+                    </div>
+
+                    <p class="typography-eyebrow">
+                        想象一下，如果虚拟和现实世界之间没有了界限，那将会怎样？
+                        <br><br>
+                        你可以坐在宇宙星辰之间听课。
+                        你可以亲眼目睹历史长河中消逝的一幕幕。
+                        即使是那些熟悉的事物，你也可以见识到它们前所未见的一面。
+                        <br><br>
+                        有了 iPhone 和 iPad，这样的体验将不仅仅是一种可能，而是真真切切的感受。增强现实以一种全新的方式利用了现有技术，让你的工作、学习、玩乐，以及与周围世界的联系，都将发生蜕变。而这一切仅仅只是开始。
+                        <br><br>
+                        一个全新的世界，正在欢迎你的到来。
+                    </p>
+                </div></div>
+            </div>
+
+            </div>
+        </div>
+
+              
+    </main>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log("load scrollAnimate")
+            $.scrollAnimate();
+        };
+
+        /*if (!window.utilities.cssPropertyValueSupported('position', 'sticky') &&
+            !window.utilities.cssPropertyValueSupported('position', '-webkit-sticky')) {
+            alert("sticky not supported");
+            $("main").removeClass("sticky-supported");
+            $(".only-sticky").removeClass("scroll-anim");
+        }*/
+    </script>
+
+
+
+</body>
+
+</html>

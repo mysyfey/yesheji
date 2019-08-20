@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <link rel="stylesheet" href="/style.css" type="text/css" />
+    <link rel="stylesheet" href="/ap.css" type="text/css" />
+    <script src="/js/jquery.min.js"></script>
+    <!--script type='text/javascript' src='js/bootstrap.min.js'></script-->
+    <script type='text/javascript' src='/js/offcanvas.js'></script>
+    <script type='text/javascript' src='/js/slick.min.js'></script>
+    <script type='text/javascript' src='/js/scrollAnimate.js'></script>
+    <script type='text/javascript' src='/js/utilities.js'></script>
+<style type="text/css"> 
+
+    body{
+        font-size:17px;
+        line-height: 1.47059;
+        font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+        
+    }
+
+    main{
+        position: relative;
+        margin-top:-1px;
+        padding-top:1px;
+    }
+
+    thick {
+        font-weight: bold;
+    }
+
+    .section{
+        position: relative;
+        //overflow: hidden;
+        padding-bottom: 150px;
+    }
+
+    .theme-dark {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .apple-grey {
+        color: #b2b2b2;
+    }
+
+    /*.center-content {
+        z-index: 2;
+        text-align: center;
+    }*/
+
+    .apb-section-content .center-content:last-child {
+        width: 715px;
+    }
+
+
+    .headline {
+        margin-top: 80px;
+        margin-bottom: 72px;
+    }
+
+    .headline .typography-headline-super{
+        margin-top: 0.1em;
+    }
+
+    .centeralign{
+        padding-left: 0.4em;
+    }
+
+    .plan-img{
+        z-index: 1;
+        width: 1442px;
+        height: 902px;
+        background-size: 1442px 902px;
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-image: url('/images/iphonexr.jpg');
+        position: relative;
+        overflow: hidden;
+        left: calc(50% - 965px);
+    }
+
+    .big-img{
+        width: 1442px;
+    }
+
+    .typography-title-large {
+        line-height: 1.125;
+        font-weight: 600;
+        letter-spacing: .004em;
+    }
+
+    .plan-intro {
+        margin-top: -229px;
+    }
+
+    a:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .the-most{
+        height: 900px;        
+        background-image: url('/images/blueiphone.jpg');
+        display:flex;
+        align-items: center;
+    }
+
+    .shade {
+        background-color: rgba(0, 0, 0, 0.75);        
+        //transition: opacity 300ms ease-in;
+    }
+
+    .carousel {
+        width: 55%;
+        height:100vh;
+    }
+
+    .carousel figure {
+        position: absolute;
+        background-position: top,center;
+        transition: opacity 500ms ease-in;
+    }
+
+    .left-column-text{
+        position: absolute;
+        top:0;
+        right: 18%;
+        width: 300px;
+        height: 100vh;
+    }
+
+    .carousel-section{
+        //margin-top: 10vh;
+    }
+
+    .top-text {
+        top: 30vh;
+    }
+
+
+    /*.plan-headline .center-content {
+        transition: transition 300ms ease-in;
+        transition: opacity 300ms ease-in;
+    }*/
+
+    .large-space{
+        margin-top:60vh;
+        margin-bottom:35vh;
+    }
+
+    /*.large-space .masked-text {
+        transition: opacity 300ms ease-in;
+    }*/
+
+    .large-space:last-child {
+        margin-bottom:35vh;
+    }
+    
+    figure .shade {
+        background-color:black;
+    }
+
+    .plan-overview {
+        margin-bottom:10vh;
+    }
+
+    .plan-headline {
+        text-align: center;
+        margin-bottom: 60vh;
+    }
+
+    @media only screen and (max-width: 767px) {
+
+        .pillar-headline {
+            width:calc(100vw - 12.5vw);
+        }
+
+        .carousel {
+            width: 100%;
+            height: 75vh;
+        }
+
+        .left-column-text{
+            right:6.25vw;
+            width:calc(100vw - 12.5vw);
+        }
+
+
+    }
+
+    .pillar {
+        margin-bottom: 60vh;
+    }
+
+    .left-headline {
+        margin-bottom: 30vh;
+    }
+
+    .curtain-section {
+        //height: 200vh;        
+    }
+    
+    .curtain {
+        position: absolute;
+        top:0;
+        height: 100%;
+        max-width: 0px;
+        width:50vw;
+        background-color:black;
+        transition: max-width 700ms ease-out;
+    }
+
+    .two-curtains {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left:0;
+        height: 130vh;
+    }
+
+    .right-curtain {
+        right:0;
+    }
+
+    .left-curtain {
+        left:0;
+    }
+
+    .curtain-active {
+        max-width: 50vw;
+    }
+
+    .curtain-content{
+        height: 100%;
+        position: relative;
+    }
+
+    .first-plan-image{
+        height: 100%;
+    }
+
+    .first-plan-image figure{
+        transition: width 200ms ease-out;
+    }
+
+    .first-plan-most-shares{
+        padding:30vh 0;
+        font-weight: 600;
+    }
+
+    .center-text {
+        text-align: center;
+    }
+
+    .thin-text{
+        font-weight: 400;
+    }
+
+    .gold-text{
+        color:#ffe5db;
+    }
+
+    .share-overview{
+        display: flex;        
+    }
+
+    .two-columns {
+        width:50%;
+        padding:20px 20px 20px 0;
+        float: left;
+    }
+
+    .two-columns+.two-columns {
+        padding:20px 0px 20px 20px;
+    }
+
+    .line-top-margin{
+        margin-top: 1.3em;
+    }
+
+    .share-img {
+        height: 70vh;
+    }
+
+
+</style>
+
+
+    
+</head>
+
+<body>    
+
+    <nav class="apple-nav">
+        <div class="apb-section-content vertical-align">
+            <h2>爱梦想</h2>
+        </div>
+    </nav>
+
+    <main class="theme-dark">
+
+        <div class="plan-section apb-fullscreen">
+
+            <figure id="first-image" class="sticky-thing cover-img" style="background-image:url(/images/13.jpg)">
+
+                <div class="shade scroll-anim" 
+                    data-scroll-animation="{
+                        'startVal':0.1,
+                        'endVal':1,
+                        'cssAttr':'opacity',
+                        'willChange':'opacity', 
+                        'topSpacing':50,
+                        'scrollLength':70, 
+                        'scrollUnit':'vh'}" ></div>
+            </figure>
+
+            <div class="plan-headline apb-section-content sticky-after one-hundred-section one-hundred-up vertical-align">
+
+                <div class="center-content scroll-anim" 
+                        data-scroll-animation="{
+                        'startVal':1,
+                        'endVal':0,
+                        'cssAttr':'opacity',
+                        'willChange':'opacity', 
+                        'topSpacing':0,
+                        'scrollLength':40, 
+                        'scrollUnit':'vh'}" 
+                        >
+
+                        <div class="scroll-anim" data-scroll-animation="{
+                            'startVal':0,
+                            'endVal':6,
+                            'cssAttr':'transform',
+                            'beforeAttr' : 'translate(0px, ', 
+                            'afterAttr' : 'px)',
+                            'willChange':'transform', 
+                            'topSpacing':0,
+                            'scrollLength':50, 
+                            scrollUnit:'vh',
+                            attrUnit: 'vh'}">
+
+                            <p class="typography-title-intro">爱梦想方案</p>
+                            <h3 class="typography-headline-super centeralign">打造另一家万亿市值公司。</h3>
+                        </div>
+
+                    </div>
+            </div>
+
+            <div class="plan-overview sticky-after">
+                <div class="apb-section-content">
+                    <div class="masked-text gold-mask scroll-anim"> 
+                    <!--data-scroll-animation="{
+                        'startVal':1,
+                        'endVal':0,
+                        'cssAttr':'opacity',
+                        'willChange':'opacity', 
+                        'topSpacing':100,
+                        'scrollLength':35, 
+                        'scrollUnit':'vh',
+                        'startWhenEl':true}" -->
+                        <h2 class="typography-overview-headline">
+                            <span class="unmasked">想象一下，</span>
+                            拥有苹果、微软、亚马逊、谷歌任何一个千分之一股份，那会怎样？
+                            <br><br>
+                            这些距离万亿美元市值最近的公司，千分之一股份，会让您瞬间变成一名超级亿万富豪，而将近十亿美元的财富，意味着您的人生随即会发生“喜剧般”的变化！
+                            <br><br>
+                            身价十亿美元，您的人生会因此而改变！
+                            <br><br>
+                            <span class="unmasked">DREAM BIG。</span>
+                            爱梦想志在成为另一个苹果（微软、亚马逊、谷歌），另一家万亿美元市值的IT公司。爱梦想方案，即爱梦想公司实现万亿市值目标的创业计划，其核心内容是：赋予人才分享万亿市值的权利，让人才成为万亿市值最大的受益者和推动者。
+                            <br><br>
+                            加入爱梦想，您的人生就会真正改变！
+
+
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--股份计划-->
+       
+        <div id="first-plan" class="apb-fullscreen">
+
+            <!--标题介绍部分-->
+
+            <div>
+
+            <div class="first-plan-bg center-content sticky-thing scroll-anim" >
+                <!--data-scroll-animation="{'startVal':0.3,'endVal':1,'cssAttr':'opacity','willChange':'opacity', 'topSpacing':50,'scrollLength':30, 'startWhenEl':true,'scrollUnit':'vh'}" -->
+
+                <div class="first-plan-image scroll-anim" 
+                    data-scroll-animation="{
+                            'startVal':30,
+                            'endVal':0,
+                            'cssAttr':'transform',
+                            'beforeAttr' : 'translate(0px, ', 
+                            'afterAttr' : 'px)',
+                            'willChange':'transform', 
+                            'topSpacing':25,
+                            'scrollLength':50, 
+                            'scrollUnit':'vh',
+                            'attrUnit': 'vh',
+                            'startWhenEl':true}">
+
+                <figure id="woman" style="background-image:url(/images/redwoman.jpg)" 
+                        class="cover-img center-content scroll-anim" 
+                        data-scroll-animation="{
+                        'startVal':0.5,
+                        'endVal':100,
+                        'cssAttr':'width',
+                        'willChange':'all', 
+                        'topSpacing':90,
+                        'scrollLength':30, 
+                        'scrollUnit':'vh',
+                        'attrUnit':'pw',
+                        'startWhenEl':true}">
+
+                    <div class="shade scroll-anim" 
+                        data-scroll-animation="{'startVal':0,'endVal':0.7,'cssAttr':'opacity','willChange':'opacity', 'topSpacing':170,'scrollLength':40, 'startWhenEl':true,'scrollUnit':'vh'}"></div>
+                </figure>
+
+                </div>
+            </div>
+
+            <div class="first-plan-intro sticky-after one-hundred-section one-hundred-up vertical-align left-headline">
+
+                <div class="center-content pillar-headline scroll-anim" 
+                        data-scroll-animation="{
+                        'startVal':0,
+                        'endVal':1,
+                        'cssAttr':'opacity',
+                        'willChange':'opacity', 
+                        'topSpacing':65,
+                        'scrollLength':15, 
+                        'scrollUnit':'vh',
+                        'startWhenEl':true}">
+                    <div class="scroll-anim" data-scroll-animation="{
+                            'startVal':12,
+                            'endVal':6,
+                            'cssAttr':'transform',
+                            'beforeAttr' : 'translate(0px, ', 
+                            'afterAttr' : 'px)',
+                            'willChange':'transform', 
+                            'topSpacing':65,
+                            'scrollLength':70, 
+                            'scrollUnit':'vh',
+                            'attrUnit': 'vh',
+                            'startWhenEl':true}">
+                        <p class="typography-eyebrow-large">合伙人持股计划</p>
+                        <h2 class="typography-hero-headline">                       
+                        用史上最多股份，<br>造就史上最多亿万富豪。
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="first-plan-overview apb-section-content">
+
+                <!--overview-->
+
+                <div class="one-hundred-section vertical-align scroll-anim">
+
+                    <div class="masked-text orange-mask scroll-anim"> 
+                                <!--data-scroll-animation="{
+                                'startVal':1,
+                                'endVal':0.5,
+                                'cssAttr':'opacity',
+                                'willChange':'opacity', 
+                                'topSpacing':100,
+                                'scrollLength':40, 
+                                'scrollUnit':'vh',
+                                'startWhenEl':true}"-->
+                        <h2 class="typography-overview-headline">
+                                    <span class="unmasked">60%股份，全球招募12200名合伙人。</span>
+                                    爱梦想创业团队成员将完全由合伙人组成，每位合伙人的股份期权数量，最低要确保其拥有成为一名亿万富豪的潜力，万亿市值，爱梦想创业团队成员人人都将成为一名亿万富豪。
+                        </h2>
+                                <!--a class="apple-button unmasked">
+                                    <span>
+                                    了解更多
+                                    </span>
+                                </a-->
+                    </div>                        
+
+                </div>
+
+            </div>
+
+            </div>
+
+            <!--最多股份-->
+
+            <div class="first-plan-most-shares apb-section-content">
+
+                <h2 class="typography-overview-headline">
+                        最多亿万富豪
+                </h2>
+                <h2 class="masked-text pink-gold-mask typography-headline-giant">
+                        60%
+                </h2>
+
+            </div>
+
+            <figure class="share-img cover-img" style="background-image: url(/images/blondcurlygirl.jpg)"></figure>
+
+            <div class="apb-section-content">
+
+                <div class="center-text">
+
+                    <p class="typography-title">万亿市值，60%股份价值
+                        <span class="nowrap">6000亿美元。</span><br>
+                    </p>                      
+
+                    <p class="gold-text line-top-margin">比mayi金服多1/3。<br></p>
+                    <p class="gold-text line-top-margin">是小米的6倍。<br><br><br></p>
+
+                </div>
+                <div class="share-overview">
+                    <div class="two-columns">
+                        <p class="gold-text">创始人团队：</p>
+                        <p class="typography-title">占比5%</p>
+                    </div>
+                    <div class="two-columns">
+                        <p class="gold-text">合伙人团队：</p>
+                        <p class="typography-title">占比60%</p>
+                    </div>
+                </div>
+                    <div class="two-columns">
+                        <p class="gold-text">融资储备：</p>
+                        <p class="typography-title">占比35%</p>
+                    </div>
+            </div>
+
+            <!--最多亿万富豪-->
+
+
+
+
+            <!--div class="first-plan-most-shares apb-section-content">
+
+                <div class="center-text">
+
+                    <h2 class="masked-text pink-gold-mask typography-headline-giant">
+                        60%
+                    </h2>
+
+                    <p class="typography-title">万亿市值，60%股份价值
+                        <span class="nowrap">6000亿美元。</span><br>
+                    </p>                      
+
+                    <p class="gold-text line-top-margin">比mayi金服多1/3。<br></p>
+                    <p class="gold-text line-top-margin">是小米的6倍。<br><br><br></p>
+
+                </div>
+                <div class="share-overview">
+                    <div class="two-columns">
+                        <p class="gold-text">创始人团队：</p>
+                        <p class="typography-title">占比5%</p>
+                    </div>
+                    <div class="two-columns">
+                        <p class="gold-text">合伙人团队：</p>
+                        <p class="typography-title">占比60%</p>
+                    </div>
+                </div>
+                    <div class="two-columns">
+                        <p class="gold-text">融资储备：</p>
+                        <p class="typography-title">占比35%</p>
+                    </div>
+            </div-->
+
+        </div>
+
+<!-- 黑色幕布水平拉上 data-scroll-animation="{
+                        'animation':'curtain',
+                        'animationId' : 'left-curtain',
+                        'topSpacing':180,
+                        'scrollLength':1,
+                        'scrollUnit':'vh',
+                        'startWhenEl':true}"
+
+
+                    <div class="two-curtains">
+                        <div id="left-curtain" class="curtain left-curtain"></div>
+
+                        <div id="right-curtain" class="curtain right-curtain"></div>
+                    </div>-->
+
+        <!--carousel
+       
+        <div class="apb-fullscreen carousel-section">
+
+            <div class="sticky-thing vertical-align">
+
+                <div class="carousel center-content scroll-anim" 
+                    data-scroll-animation="{
+                    'startVal':1,
+                    'endVal':0.6,
+                    'cssAttr':'transform',                    
+                    'beforeAttr' : 'scale(', 
+                    'afterAttr' : ')',
+                    'willChange':'transform', 
+                    'topSpacing':100,
+                    'scrollLength':250, 
+                    scrollUnit:'vh',
+                    'startWhenEl':true}">
+
+                    <div class="shade"></div>
+
+                    <figure style="background-image:url(/images/redgirl.jpg)" class="cover-img"></figure> 
+
+                    <figure style="background-image:url(/images/dreadlockgirl.jpg)" class="cover-img scroll-anim" data-scroll-animation="{
+                    'startVal':0,
+                    'endVal':1,
+                    'cssAttr':'opacity',
+                    'willChange':'opacity', 
+                    'topSpacing':200,
+                    'scrollLength':5, 
+                    'startWhenEl':true,
+                    'scrollUnit':'vh'}"></figure> 
+
+                    <figure style="background-image:url(/images/blueshirtgirl.jpg)" class="cover-img scroll-anim" data-scroll-animation="{
+                    'startVal':0,
+                    'endVal':1,
+                    'cssAttr':'opacity',
+                    'willChange':'opacity', 
+                    'topSpacing':300,
+                    'scrollLength':5, 
+                    'startWhenEl':true,
+                    'scrollUnit':'vh'}"></figure> 
+                </div>
+            </div>
+
+            <div class="sticky-after one-hundred-section">
+                <div class="left-column-text typography-eyebrow-small">
+                    <thick>“10亿美元级合伙人” </thick> ：简称“BD（Billion Dollars十亿美元）合伙人”，承担最为重要的任务也是持股最多的合伙人。万亿市值下每人身价超10亿美元。只有200个席位，每位股份占总比例千分之一。
+                </div>
+            </div>
+
+            <div class="sticky-after one-hundred-section">
+                    <div class="left-column-text typography-eyebrow-small">
+                        <thick>“亿元美元级合伙人” </thick> ：简称“BD-10（10亿/10）合伙人”。万亿市值下每位合伙人身价1亿美元，仍相当可观。每位合伙人股份占比万分之一。
+                    </div>
+            </div>
+
+            <div class="sticky-after one-hundred-section">
+                    <div class="left-column-text typography-eyebrow-small">
+                        <thick>“亿元人民币级合伙人” </thick> ：简称“BD-50合伙人（10亿/50）”。万亿市值，每位合伙人将身价两千万美元，换算人民币1.2亿，仍是亿元级别。
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+-->
+
+                    
+
+                    
+    
+        
+    </main>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            console.log("load scrollAnimate")
+            $.scrollAnimate();
+        };
+
+        /*if (!window.utilities.cssPropertyValueSupported('position', 'sticky') &&
+            !window.utilities.cssPropertyValueSupported('position', '-webkit-sticky')) {
+            alert("sticky not supported");
+            $("main").removeClass("sticky-supported");
+            $(".only-sticky").removeClass("scroll-anim");
+        }*/
+    </script>
+
+
+
+</body>
+
+</html>
+
+            <!--div class="sticky-after one-hundred-section one-hundred-up top-text">
+                <div class="center-content pillar-headline">
+                        <p class="typography-eyebrow-large">合伙人持股计划</p>
+                        <h2 class="typography-hero-headline">                       
+                        用史上最多股份，<br>造就史上最多亿万富豪。</span>
+                        </h2>
+                </div>
+            </div-->
+
+
+
+        <!--div class="apb-section-content section" style="display:none">
+
+            <div class="center-content headline">
+                <h1>爱梦想方案</h1>
+                <h3 class="typography-headline-super centeralign">打造另一家万亿市值公司。</h3>
+            </div>
+            <figure class="plan-img"></figure>
+            <div class="center-content plan-intro">
+                <p class="typography-title-large">
+                    60%的股份，在全球范围内招募12200名精英人才，创建爱梦想合伙人团队。万亿市值下，每位合伙人手里拥有的股份期权将价值至少1.2亿人民币。我们的股份分配让人才成为创业最大的受益者和推动者。
+                </p>
+                <a class="typography-eyebrow">点击阅读“爱梦想合伙人”</a>
+            </div>
+        </div>
+
+        <div class="section" style="display:none">
+            <figure class="cover-img big-img the-most center-content">
+                <div class="apb-fullscreen">
+                    <h2 class="typography-headline">史上最多股份，创造史上最多亿万富豪</h2>                
+                    <a class="typography-eyebrow">观看视频</a>
+                </div>
+            </figure>
+        </div>
+
+        <div class="section" style="display:none">
+            <div class="apb-section-content">
+                <div class="masked-text pink-blue-mask">
+                    <h2 class="typography-overview-headline">
+                        <span class="unmasked">60%的股份，</span>在全球范围内招募12200名精英人才，创建爱梦想合伙人团队。万亿市值下，每位合伙人手里拥有的股份期权将价值至少1.2亿人民币。我们的股份分配让人才成为创业最大的受益者和推动者。
+                    </h2>
+                    <a class="apple-button unmasked">
+                        <span>
+                        了解更多
+                    </span>
+                    </a>
+                </div>
+            </div>
+        </div-->
